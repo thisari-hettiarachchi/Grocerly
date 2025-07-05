@@ -54,8 +54,6 @@ input[type='submit']:hover{
 
 
 
-/*    Register section start   */
-
 .form-container{
     display: flex;
     align-items: center;
@@ -168,5 +166,3 @@ input[type='submit']:hover{
 .form-container form .input-field .box {
     padding-right: 45px;
 }
-
-/*    Register section end   */
