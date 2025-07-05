@@ -57,12 +57,19 @@
                     </div>
                     <div class="col">
                         <div class="input-field">
-                            <p>Your Password  </p>
-                            <input type="password" name="pass" placeholder="Enter your password" maxlength="50" required class="box">
+                            <p>Your Password</p>
+                            <input type="password" name="pass" placeholder="Enter your password" maxlength="50" required class="box" id="password1">
+                            <button type="button" class="password-toggle" onclick="togglePassword('password1', this)">
+                                <i class="fas fa-eye" id="password1-icon"></i>
+                            </button>
                         </div>
+
                         <div class="input-field">
-                            <p>Your Password </p>
-                            <input type="password" name="cpass" placeholder="Confirm your password" maxlength="50" required class="box">
+                            <p>Confirm Password</p>
+                            <input type="password" name="cpass" placeholder="Confirm your password" maxlength="50" required class="box" id="password2">
+                            <button type="button" class="password-toggle" onclick="togglePassword('password2', this)">
+                                <i class="fas fa-eye" id="password2-icon"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -76,6 +83,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert">
 
         <?php include 'components/alert.php'; ?>
+
+        <script src="js/user_script.js"></script>
     </body>
 
 </html>

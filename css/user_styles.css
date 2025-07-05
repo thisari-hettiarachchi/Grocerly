@@ -143,5 +143,30 @@ input[type='submit']:hover{
     width: fit-content;
 }
 
+/* Password toggle styles */
+.form-container form .input-field {
+    position: relative;
+}
+
+.form-container form .password-toggle {
+    position: absolute;
+    right: 10px;
+    top:65%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 16px;
+    padding: 5px;
+}
+
+.form-container form .password-toggle:hover {
+    color: var(--main-color);
+}
+
+.form-container form .input-field .box {
+    padding-right: 45px;
+}
 
 /*    Register section end   */
