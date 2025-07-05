@@ -18,8 +18,8 @@
             if ($pass !== $cpass) {
                 $warning_msg[] = "Passwords do not match.";
             } else {
-                $stmt = $conn->prepare("INSERT INTO users (user_id, name, email, password, image) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $name, $email, $pass, $image]);
+                $stmt = $conn->prepare("INSERT INTO users (user_id, name, email, password) VALUES (?, ?, ?, ?)");
+                $stmt->execute([$user_id, $name, $email, $pass]);
                 $success_msg[] = "Successfully registered! Please login.";
             }
         }
@@ -40,29 +40,36 @@
         <link rel="stylesheet" href="css/user_styles.css">
     </head>
 
-    <body>
-        <section class="form-ontainer">
+    <body style="background-color: #f3842a;">
+        <section class="form-container">
             <form action="" method="post" enctype="multipart/form-data" class="register">
                 <h3>Register Now</h3>
                 <div class="flex">
                     <div class="col">
                         <div class="input-field">
-                            <p>Your Name <span>*</span></p>
+                            <p>Your Name</p>
                             <input type="text" name="name" placeholder="Enter your name" maxlength="50" required class="box">
                         </div>
                         <div class="input-field">
-                            <p>Your Email <span>*</span></p>
+                            <p>Your Email </p>
                             <input type="email" name="email" placeholder="Enter your email" maxlength="50" required class="box">
                         </div>
                     </div>
                     <div class="col">
                         <div class="input-field">
-                            <p>Your Password <span>*</span></p>
-                            <input type="password" name="pass" placeholder="Enter your password" maxlength="50" required class="box">
+                            <p>Your Password</p>
+                            <input type="password" name="pass" placeholder="Enter your password" maxlength="50" required class="box" id="password1">
+                            <button type="button" class="password-toggle" onclick="togglePassword('password1', this)">
+                                <i class="fas fa-eye" id="password1-icon"></i>
+                            </button>
                         </div>
+
                         <div class="input-field">
-                            <p>Your Password <span>*</span></p>
-                            <input type="password" name="cpass" placeholder="Confirm your password" maxlength="50" required class="box">
+                            <p>Confirm Password</p>
+                            <input type="password" name="cpass" placeholder="Confirm your password" maxlength="50" required class="box" id="password2">
+                            <button type="button" class="password-toggle" onclick="togglePassword('password2', this)">
+                                <i class="fas fa-eye" id="password2-icon"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -76,6 +83,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert">
 
         <?php include 'components/alert.php'; ?>
+
+        <script src="js/user_script.js"></script>
     </body>
 
 </html>
