@@ -1,5 +1,5 @@
 <?php
-    $db_name = 'mysql:host=localhost;dbname=zestyzone';
+    $db_name = 'mysql:host=localhost;dbname=ZestyZone';
     $user_name = 'root';
     $user_password = '';
 

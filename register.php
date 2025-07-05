@@ -80,7 +80,7 @@
 
 
         
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <?php include 'components/alert.php'; ?>
 
