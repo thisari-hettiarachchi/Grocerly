@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+:root{
+    --main-color: #f3842a;
+    --text-color:rgb(0, 0, 0);
+    --text-color-2: #fff;
+    --bg-color: #fff;
+    --border-color: #ddd;
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);   
+    --backdrop-filter: blur(5px);
+    --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.40);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 0 2rem;
+}
+
+.btn{
+    background-color: var(--main-color);
+    border: 2px solid var(--white-alpha-40);
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+    color: var(--text-color-2);
+    padding: .8rem 2rem;
+    border-radius: 1em;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+
+input[type='submit']{
+    cursor: pointer;
+}
+
+input[type='submit']:hover{
+    color: var(--text-color);
+}
+
+
+
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.form-container form{
+    background-color: var(--white-alpha-40);
+    border: 1px solid var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.form-container form .flex{
+    display: flex;
+    gap: 5rem;
+}
+
+.form-container form .flex .col{
+    flex: 1 1 25rem;
+}
+
+.form-container .login{
+    width: 50rem;
+}
+
+.form-container .register{
+    width: 60rem;
+}
+
+.form-container form h3{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-container form p{
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.form-container form .link{
+    padding-bottom: 1rem;
+    font: 1.2rem;
+    text-transform: capitalize;
+}
+
+.form-container form .link a{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.form-container form .link a:hover{
+    color: var(--text-color-2);
+    text-decoration: underline;
+}
+
+.form-container form .box{
+    background-color: var(--white-alpha-40);
+    border: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    border-radius: .5rem;
+    margin: .5rem 0;
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+
+.form-container form textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.form-container form .btn{
+    display: block;
+    margin: 1rem auto 0;
+    width: fit-content;
+}
+
+/* Password toggle styles */
+.form-container form .input-field {
+    position: relative;
+}
+
+.form-container form .password-toggle {
+    position: absolute;
+    right: 10px;
+    top:65%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 16px;
+    padding: 5px;
+}
+
+.form-container form .password-toggle:hover {
+    color: var(--main-color);
+}
+
+.form-container form .input-field .box {
+    padding-right: 45px;
+}
+
