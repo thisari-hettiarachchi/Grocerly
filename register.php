@@ -40,28 +40,28 @@
         <link rel="stylesheet" href="css/user_styles.css">
     </head>
 
-    <body>
-        <section class="form-ontainer">
+    <body style="background-color: #f3842a;">
+        <section class="form-container">
             <form action="" method="post" enctype="multipart/form-data" class="register">
                 <h3>Register Now</h3>
                 <div class="flex">
                     <div class="col">
                         <div class="input-field">
-                            <p>Your Name <span>*</span></p>
+                            <p>Your Name</p>
                             <input type="text" name="name" placeholder="Enter your name" maxlength="50" required class="box">
                         </div>
                         <div class="input-field">
-                            <p>Your Email <span>*</span></p>
+                            <p>Your Email </p>
                             <input type="email" name="email" placeholder="Enter your email" maxlength="50" required class="box">
                         </div>
                     </div>
                     <div class="col">
                         <div class="input-field">
-                            <p>Your Password <span>*</span></p>
+                            <p>Your Password  </p>
                             <input type="password" name="pass" placeholder="Enter your password" maxlength="50" required class="box">
                         </div>
                         <div class="input-field">
-                            <p>Your Password <span>*</span></p>
+                            <p>Your Password </p>
                             <input type="password" name="cpass" placeholder="Confirm your password" maxlength="50" required class="box">
                         </div>
                     </div>
