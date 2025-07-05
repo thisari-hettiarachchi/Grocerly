@@ -1,5 +1,29 @@
 <?php
-    
+    include 'components/connect.php';
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $user_id = unique_id();
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $cpass = $_POST['cpass'];
+
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        $existing_user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($existing_user) {
+            $warning_msg[] = "Email is already registered.";
+        } else {
+            if ($pass !== $cpass) {
+                $warning_msg[] = "Passwords do not match.";
+            } else {
+                $stmt = $conn->prepare("INSERT INTO users (user_id, name, email, password, image) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $name, $email, $pass, $image]);
+                $success_msg[] = "Successfully registered! Please login.";
+            }
+        }
+    }
     
 ?>
 
@@ -47,6 +71,8 @@
             </form>
         </section>
 
+
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert">
 
         <?php include 'components/alert.php'; ?>
