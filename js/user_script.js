@@ -12,3 +12,18 @@ function togglePassword(inputId, button) {
         icon.classList.add('fa-eye');
     }
 }
+
+let userBtn = document.getElementById("user-btn");
+    let profileDetail = document.getElementById("profile-detail");
+
+    if (userBtn && profileDetail) {
+        userBtn.addEventListener("click", function () {
+            profileDetail.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!userBtn.contains(event.target) && !profileDetail.contains(event.target)) {
+                profileDetail.classList.remove("active");
+            }
+        });
+    }
