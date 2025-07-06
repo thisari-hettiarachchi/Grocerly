@@ -32,6 +32,7 @@
     <body>
         <?php include('components/user_header.php'); ?>
 
+        <script src="js/user_script.js"></script>
     </body>
 
 </html>
