@@ -1,7 +1,9 @@
 function togglePassword(inputId, button) {
     const passwordInput = document.getElementById(inputId);
     const icon = button.querySelector('i');
-            
+
+    if (!passwordInput || !icon) return; // Safety check
+
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         icon.classList.remove('fa-eye');
@@ -13,17 +15,19 @@ function togglePassword(inputId, button) {
     }
 }
 
-let userBtn = document.getElementById("user-btn");
-    let profileDetail = document.getElementById("profile-detail");
+document.addEventListener('DOMContentLoaded', () => {
+    const userBtn = document.getElementById("user-btn");
+    const profileDetail = document.getElementById("profile-detail");
 
     if (userBtn && profileDetail) {
-        userBtn.addEventListener("click", function () {
+        userBtn.addEventListener("click", () => {
             profileDetail.classList.toggle("active");
         });
 
-        document.addEventListener("click", function (event) {
+        document.addEventListener("click", (event) => {
             if (!userBtn.contains(event.target) && !profileDetail.contains(event.target)) {
                 profileDetail.classList.remove("active");
             }
         });
     }
+});

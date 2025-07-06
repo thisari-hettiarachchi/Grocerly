@@ -34,7 +34,7 @@
 <header>
     <section class="flex">
         <a href="home.php" class="logo">
-            <img src="images/logo.png" width="130px">
+            <img src="images/Logo.png" width="130px">
         </a>
 
         <?php $page = basename($_SERVER['PHP_SELF']); ?>
@@ -47,35 +47,37 @@
         </nav>
         
         <form action="search_product.php" method="post" class="search-form">
-            <input type="text" name="search-product" placeholder="Search product..." required maxlength="100">
-            <button type="submit" class="bx bx-search-alt-2" id="search_product_btn"></button>
+            <input type="text" class="search-input" name="search-product" placeholder="Search product..." required maxlength="100">
+            <button type="submit" class="search-btn bx bx-search-alt-2"></button>
         </form>
 
         <div class="icons">
-            <div class="bx bx-list-plus" id="menu-btn"></div>
-            <div class="bx bx-search-alt-2" id="search-btn"></div>
-
             <?php
                 $count_wishlist_item = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
                 $count_wishlist_item->execute([$user_id]);
                 $total_wishlist_items = $count_wishlist_item->rowCount();
             ?>
-            <a href="wishlist.php"><i class="bx bx-heart"></i><sup><?= $total_wishlist_items; ?></sup></a>
+            <a href="wishlist.php"  class="wishlist-btn">
+                <i class="bx bx-heart"></i><sup><?= $total_wishlist_items; ?></sup>
+            </a>
 
             <?php
                 $count_cart_item = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
                 $count_cart_item->execute([$user_id]);
                 $total_cart_items = $count_cart_item->rowCount();
             ?>
-            <a href="cart.php"><i class="bx bx-cart"></i><sup><?= $total_cart_items; ?></sup></a>
-            <div class="bx bxs-user" id="user-btn" style="cursor: pointer;"></div>
+            <a href="cart.php"  class="cart-btn">
+                <i class="bx bx-cart"></i><sup><?= $total_cart_items; ?></sup>
+            </a>
+            <div class="profile-btn bx bx-user" id="user-btn" style="cursor: pointer;"></div>
         </div>
 
         <div class="profile-detail" id="profile-detail">
             <?php 
             if (isset($_SESSION['email']) && $fetch_profile) { 
+                $profile_image = !empty($fetch_profile['image']) ? 'uploaded_files/' . htmlspecialchars($fetch_profile['image']) : 'images/default.jpg';
             ?>
-                <img src="uploaded_files/<?= htmlspecialchars($fetch_profile['image']); ?>" class="logo-img" width="100">
+                <img src="<?= $profile_image; ?>" class="logo-img" width="100">
                 <p><?= htmlspecialchars($fetch_profile['name']); ?></p>
                 <div class="flex-btn">
                     <a href="profile.php?email=<?= urlencode($_SESSION['email']); ?>" class="btn">View Profile</a>
@@ -88,6 +90,7 @@
                     <a href="register.php" class="btn">Register</a>
                 </div>
             <?php } ?>
+
         </div>
 
 
