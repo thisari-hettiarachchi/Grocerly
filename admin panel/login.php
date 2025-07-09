@@ -15,7 +15,7 @@
         if (empty($email) || empty($pass)) {
             $error_msg[] = "Please fill both email and password.";
         } else {
-            $sql = "SELECT email, password FROM sellers WHERE email = :email";
+            $sql = "SELECT seller_id, email, password FROM sellers WHERE email = :email";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->execute();
