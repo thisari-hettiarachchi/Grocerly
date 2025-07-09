@@ -19,7 +19,7 @@
 
         <title>Home Page</title>
 
-        <link rel="stylesheet" type="text/css" href="css/user.css">
+        <link rel="stylesheet" type="text/css" href="./css/user.css">
         
         <link rel="shortcut icon" href="images/favicon.png" type="image/svg+xml">
 
@@ -30,7 +30,7 @@
     </head>
 
     <body>
-        <?php include('components/user_header.php'); ?>
+        <?php include('./components/user_header.php'); ?>
 
     </body>
 
