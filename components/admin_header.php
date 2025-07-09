@@ -10,7 +10,7 @@
       <i class='bx bx-menu' id="menu-btn"></i> <!-- Toggle sidebar -->
     </div>
 
-    <!-- Profile Dropdown -->
+    <!-- Profile Dropdown --> 
     <div class="profile-detail" id="profile-detail">
       <?php 
         if (isset($_SESSION['email']) && $fetch_profile) { 
