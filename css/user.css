@@ -615,11 +615,87 @@ header .profile-detail .flex-btn .btn:hover {
 
 
 
+/* Categories */
+.categories {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 1rem;
+}
+
+.categories .heading {
+    text-align: center;
+}
+
+.categories h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.categories h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;            /* underline visible on load */
+    height: 3px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);   /* hide by scaling horizontally */
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.categories h1:hover::after {
+    transform: scaleX(1);   /* animate underline growing on hover */
+}
 
 
 
 
+.categories .box-container{
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
 
+.categories .box {
+    flex: 0 0 auto;
+    width: 150px;
+    background: #f9f9f9;
+    border: 2px solid var(--primary-color); 
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease; 
+    margin-top: 10px;
+}
+
+.categories .box:hover {
+    border-color: var(--primary-dark); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    transform: scale(1.03); 
+}
+
+.categories .category-content{
+    text-decoration: none;
+}
+
+.categories .category-content img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.categories .category-content h3.btn {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #10b981;
+}
 
 
 
