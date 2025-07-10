@@ -18,7 +18,7 @@ body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
     min-height: 100vh;
-    overflow-x: hidden;
+    position: relative;
 }
 
 .floating-elements {
