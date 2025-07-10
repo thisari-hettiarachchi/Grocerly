@@ -3,59 +3,77 @@
 
     if (isset($_COOKIE['user_id'])) {
         $user_id = $_COOKIE['user_id'];
-    }else{
+    } else {
         $user_id = '';
     }
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About | Grocerly</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/fav.png" type="image/png">
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/user.css">
+    
 
-        <title>About Page</title>
-        <link rel="stylesheet" type="text/css" href="css/user.css">
-        <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<body>
+    <?php include 'components/user_header.php'; ?>
 
-        <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
-  
-    </head>
-
-    <body>
-        <?php include 'components/user_header.php'; ?>
-        <div class="banner">
-            <div class="details">
-                <h1>About Us</h1>
-                <p>At Grocerly, we believe grocery shopping should be simple, convenient, and enjoyable. That’s why we’ve built a one-stop online destination where you can find<br> 
-                fresh produce, pantry staples, and everyday essentials—all delivered right to your door. Whether you're stocking up for the week or grabbing last-minute items, <br>
-                Grocerly is here to make your life easier. We’re committed to quality, affordability, and exceptional service,<br>
-                 so you can spend less time shopping and more time enjoying what matters most.
-                </p>
-                <span><a href="dashboard.php">About Us</a><i class="bx bx-right-arrow-alt"></i>About Us</span>
-            </div>
+    <!-- About Banner -->
+    
+    <section class="banner">
+        <div class="details">
+            <h1>About Us</h1>
+            <p>
+                At <strong>Grocerly</strong>, we believe grocery shopping should be simple, convenient, and enjoyable. That’s why we’ve built a one-stop online destination where you can find
+                fresh produce, pantry staples, and everyday essentials—all delivered right to your door.
+                <br><br>
+                Whether you're stocking up for the week or grabbing last-minute items, Grocerly is here to make your life easier. We’re committed to quality, affordability, and exceptional service,
+                so you can spend less time shopping and more time enjoying what matters most.
+            </p>
+            <span><a href="dashboard.php">Home</a> <i class="bx bx-right-arrow-alt"></i> About Us</span>
         </div>
-        <div class="line2"></div>
-
-        <div class="who">
-            <div class="box-container">
-                <span>Who we are</span>
-                <h1></h1>
-
+    </section>
+    
+    <!-- Who We Are 
+    <div class="who">
+        <div class="box-container">
+            <div class="heading">
+                <h2>Who We Are</h2>
+                <img src="image/about-banner.jpg">
+                    <p>
+                        Grocerly is a team of passionate individuals dedicated to transforming the way people shop for groceries. We combine technology with top-notch logistics to deliver an unmatched online shopping experience.
+                    </p>
+                    <div class="flex-btn">
+                        <a href="shop.php" class="btn" >explore our shop </a>
+                        <a href="shop.php" class="btn" >visit our shop </a>
+                    </div>
             </div>
+            
         </div>
+        -->
 
-        <?php include 'components/user_footer.php'; ?>
+    
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetlert/2.1.2/sweetalert.min.js"></script>
+    
 
-        <script src="js/user_script.js"></script>
-        <?php include 'components/alert.php'; ?>
-    </body>
 
+
+    <!-- Custom JS -->
+    <script src="js/user_script.js"></script>
+    <?php include 'components/alert.php'; ?>
+</body>
 </html>
