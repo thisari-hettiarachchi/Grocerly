@@ -32,6 +32,13 @@
     <body>
         <?php include('components/user_header.php'); ?>
 
+
+        
+
+
+        <?php include('components/footer.php'); ?>
+        <?php include('components/alert.php'); ?>
+
         <script src="js/user_script.js"></script>
     </body>
 
