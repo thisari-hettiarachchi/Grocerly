@@ -16,12 +16,9 @@
 }
 
 body {
-    font-family: 'Inter',sans-serif;
-    background: linear-gradient(135deg ,#f0fdf4 0%,  #ecfdf5 50%, #d1fae5 100%);
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     overflow-x: hidden;
     padding: 2rem 0;
@@ -688,7 +685,6 @@ footer {
     padding: 3rem 0 0;
     overflow: hidden;
 }
-
 
 footer .content {
     max-width: 1200px;
