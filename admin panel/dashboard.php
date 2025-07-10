@@ -20,6 +20,8 @@
         <link rel="stylesheet" type="text/css" href="../css/sidebar.css">
 </head>
 <body>
+
+   
     <?php include '../components/admin_header.php';?>
 
     <?php include '../components/footer.php';?>

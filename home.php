@@ -32,14 +32,47 @@
     <body>
         <?php include('components/user_header.php'); ?>
 
+        <section class="slide-container">
+            <div class="slider">
+                <div class="sliderBox active">
+                    <div class="textBox">
+                        <h1>Freshness Delivered <br> to Your Doorstep</h1>
+                    </div>
+                    <div class="imgBox">
+                        <img src="images/hero2.png" alt="Slide 1">
+                    </div>
+                </div>
+                <div class="sliderBox">
+                    <div class="textBox">
+                        <h1>The Grocery Store <br> That Comes to You</h1>
+                    </div>
+                    <div class="imgBox">
+                        <img src="images/hero1.png" alt="Slide 2">
+                    </div>
+                </div>
+            </div>
+            <ul class="controls">
+                <li class="slider-prev">
+                    <i class="bx bxs-left-arrow-alt"></i>
+                </li>
+                <li class="slider-next">
+                    <i class="bx bxs-right-arrow-alt"></i>
+                </li>
+            </ul>
+        </section>
 
+
+        <section class="categories">
+            <div class="heading">
+                <h1>Categories Features</h1>
+            </div>
+        </section>        
         
 
-
-        <?php include('components/footer.php'); ?>
-        <?php include('components/alert.php'); ?>
-
         <script src="js/user_script.js"></script>
+        <?php include('components/alert.php'); ?>
+        <?php include('components/footer.php'); ?>
+
     </body>
 
 </html>
