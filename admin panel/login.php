@@ -29,7 +29,7 @@
                     setcookie('email', $row['email'], time() + (86400 * 30), "/"); 
                     setcookie('seller_id', $row['seller_id'], time() + (86400 * 30), "/"); 
                     
-                    header("Location: dashboard.php");
+                    header("Location:admin panel/dashboard.php");
                     exit();
                 } else {
                     $error_msg[] = "Invalid password. Please try again.";
