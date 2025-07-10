@@ -64,7 +64,57 @@
 
         <section class="categories">
             <div class="heading">
-                <h1>Categories Features</h1>
+                <h1>Categories</h1>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/fruits.jpg">
+                        <h3 class="btn">Fruits</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/vegetables.jpg">
+                        <h3 class="btn">Vegitables</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/beverage.jpg">
+                        <h3 class="btn">Dairy & Beverages</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/snacks.jpg">
+                        <h3 class="btn">Snacks</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/bakery.jpg">
+                        <h3 class="btn">Bakery</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/meat.jpg">
+                        <h3 class="btn">Meat & Seafood</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/care.jpg">
+                        <h3 class="btn">Personal Care</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="shop.php" class="category-content">
+                        <img src="images/household.jpg">
+                        <h3 class="btn">Hosehold items</h3>
+                    </a>
+                </div>
             </div>
         </section>        
         
