@@ -36,12 +36,19 @@
                 fresh produce, pantry staples, and everyday essentials—all delivered right to your door. Whether you're stocking up for the week or grabbing last-minute items, <br>
                 Grocerly is here to make your life easier. We’re committed to quality, affordability, and exceptional service,<br>
                  so you can spend less time shopping and more time enjoying what matters most.
-
-</p>
+                </p>
                 <span><a href="dashboard.php">About Us</a><i class="bx bx-right-arrow-alt"></i>About Us</span>
             </div>
         </div>
         <div class="line2"></div>
+
+        <div class="who">
+            <div class="box-container">
+                <span>Who we are</span>
+                <h1></h1>
+
+            </div>
+        </div>
 
         <?php include 'components/user_footer.php'; ?>
 
