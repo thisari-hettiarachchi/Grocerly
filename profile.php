@@ -80,8 +80,11 @@
                 </div>   
             </div>
         </div>
-        <?php include('components/alert.php'); ?>
 
+
+        <?php include('components/alert.php'); ?>
+        
+        <script src="js/user_script.js"></script>
     </body>
 
 </html>
