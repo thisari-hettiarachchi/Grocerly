@@ -227,9 +227,18 @@ body {
     text-decoration: underline;
 }
 
+.form-container .update .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
 
-
-
+.form-container .update .col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 
 
 
