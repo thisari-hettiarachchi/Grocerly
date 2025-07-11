@@ -37,10 +37,17 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="../css/admin_style.css">
     </head>
 
     <body>
+        <div class="floating-elements">
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+        </div>
+
+
         <section class="form-container">
             <form action="" method="post" enctype="multipart/form-data" class="register">
                 <h3>Register Now</h3>
