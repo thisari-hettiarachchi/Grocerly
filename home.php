@@ -118,7 +118,6 @@
             </div>
         </section>        
         
-
         <script src="js/user_script.js"></script>
         <?php include('components/alert.php'); ?>
         <?php include('components/footer.php'); ?>

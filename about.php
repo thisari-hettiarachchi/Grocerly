@@ -73,6 +73,8 @@
         </div>
     </section>
 
+    
+
     <section class="grocerly-intro">
         <div class="grocerly-content">
             
@@ -101,19 +103,19 @@
     
    <!-- Who We Are Section 
     <section class="who-we-are">
-  <div class="container">
-    <img src="image/grocerly.webp" alt="Grocerly Team" class="top-image">
-    <h2>Who We Are</h2>
-    <p>
-      At <strong>Grocerly</strong>, we are a team of passionate individuals dedicated to transforming grocery shopping. 
-      We combine smart technology with efficient logistics to deliver a smooth and reliable experience.
-    </p>
-    <div class="btn-group">
-      <a href="shop.php" class="btn">Explore Our Shop</a>
-      <a href="shop.php" class="btn">Visit Our Store</a>
-    </div>
-  </div>
-</section>
+        <div class="container">
+            <img src="image/grocerly.webp" alt="Grocerly Team" class="top-image">
+            <h2>Who We Are</h2>
+            <p>
+            At <strong>Grocerly</strong>, we are a team of passionate individuals dedicated to transforming grocery shopping. 
+            We combine smart technology with efficient logistics to deliver a smooth and reliable experience.
+            </p>
+            <div class="btn-group">
+            <a href="shop.php" class="btn">Explore Our Shop</a>
+            <a href="shop.php" class="btn">Visit Our Store</a>
+            </div>
+        </div>
+    </section>
 
       Exclusive Collection 
         <div class="exclusive">
@@ -125,10 +127,13 @@
         </div>
     </section>
     -->
+    
 
     <!-- Custom JS -->
     <script src="js/user_script.js"></script>
-        <?php include('components/alert.php'); ?>
-        <?php include('components/footer.php'); ?>
+    <?php include('components/alert.php'); ?>
+    <?php include('components/footer.php'); ?>
+
+    <button id="scrollTopBtn" title="Go to top">⬆️ </button>
 </body>
 </html>

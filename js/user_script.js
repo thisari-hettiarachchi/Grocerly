@@ -86,15 +86,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-//about page java script part
+//about page java script part//
 
-window.addEventListener('scroll', function () {
-    const section = document.querySelector('.who-we-are');
-    const position = section.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-
-    if (position < screenPosition) {
-        section.classList.add('active');
+// Fade in elements on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
     }
+  });
 });
 
+document.querySelectorAll('.box-left, .box-right, .grocerly-content').forEach((el) => {
+  el.classList.add('hidden');
+  observer.observe(el);
+});
+
+// Scroll to top smoothly
+const toTopBtn = document.createElement('button');
+toTopBtn.innerHTML = '⬆️';
+toTopBtn.id = 'scrollTopBtn';
+document.body.appendChild(toTopBtn);
+
+toTopBtn.style.cssText = `
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #2b8a3e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+`;
+
+window.addEventListener('scroll', () => {
+  toTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+
+toTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Show/hide the back to top button
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById("scrollTopBtn");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+});
+
+// Scroll to top when clicked
+document.getElementById("scrollTopBtn").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
