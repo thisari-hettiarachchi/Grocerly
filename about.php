@@ -48,41 +48,36 @@
         </div>
     </section>
     
-    <!-- Who We Are -->
-    <div class="who">
-        <div class="box-container">
-            <div class="box">
-                <div class="heading">
+   <!-- Who We Are Section -->
+    <section class="who-we-are">
+        <div class="container">
+            <div class="text-content">
                 <h2>Who We Are</h2>
-                <img src="image/about-banner.jpg">
-                    <p>
-                        Grocerly is a team of passionate individuals dedicated to transforming the way people shop for groceries. We combine technology with top-notch logistics to deliver an unmatched online shopping experience.
-                    </p>
-                    <div class="flex-btn">
-                        <a href="shop.php" class="btn" >explore our shop </a>
-                        <a href="shop.php" class="btn" >visit our shop </a>
-                    </div>
+                <img src="image/about-banner.jpg" alt="About Grocerly">
+                <p>
+                    At <strong>Grocerly</strong>, we are a team of passionate individuals dedicated to transforming grocery shopping. 
+                    By combining smart technology with efficient logistics, we deliver a smooth and delightful online shopping experience right to your doorstep.
+                </p>
+                <div class="btn-group">
+                    <a href="shop.php" class="btn">Explore Our Shop</a>
+                    <a href="shop.php" class="btn">Visit Our Store</a>
                 </div>
             </div>
-            <div class="img-box">
-                <img src="image/banner.jpg" class="img">
-                <img src="image/about-banner.jpeg" class="img">
+            <div class="image-gallery">
+                <img src="image/banner.jpg" alt="Grocerly Banner" class="img">
+                <img src="image/about-banner.jpeg" alt="About Banner" class="img">
             </div>
-            
         </div>
+
+        <!-- Exclusive Collection -->
         <div class="exclusive">
             <div class="details">
-                <h1>Exclusive Collection<br>summer collection 2025</h1>
-                <p></p>
+                <h1>Exclusive Collection<br>Summer Collection 2025</h1>
+                <p>Discover the freshest picks and seasonal specials curated just for you.</p>
                 <a href="shop.php" class="btn">Shop Now</a>
             </div>
         </div>
-
-    
-
-    
-
-
+    </section>
     <!-- Custom JS -->
     <script src="js/user_script.js"></script>
         <?php include('components/alert.php'); ?>
