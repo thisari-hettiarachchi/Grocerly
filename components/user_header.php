@@ -40,7 +40,7 @@
         <?php $page = basename($_SERVER['PHP_SELF']); ?>
         <nav class="navbar">
             <a href="home.php" class="<?= $page == 'home.php' ? 'active' : '' ?>">Home</a>
-            <a href="about-us.php" class="<?= $page == 'about-us.php' ? 'active' : '' ?>">About Us</a>
+            <a href="about.php" class="<?= $page == 'about.php' ? 'active' : '' ?>">About Us</a>
             <a href="shop.php" class="<?= $page == 'shop.php' ? 'active' : '' ?>">Shop</a>
             <a href="order.php" class="<?= $page == 'order.php' ? 'active' : '' ?>">Order</a>
             <a href="contact-us.php" class="<?= $page == 'contact-us.php' ? 'active' : '' ?>">Contact Us</a>

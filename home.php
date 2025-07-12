@@ -64,7 +64,7 @@
 
         <section class="categories">
             <div class="heading">
-                <h1>Categories</h1>
+                <h1>Shop by Categories</h1>
             </div>
             <div class="box-container">
                 <div class="box">
