@@ -115,7 +115,7 @@
   </div>
 </section>
 
-        <!-- Exclusive Collection -->
+        <!-- Exclusive Collection 
         <div class="exclusive">
             <div class="details">
                 <h1>Exclusive Collection<br>Summer Collection 2025</h1>
@@ -124,7 +124,7 @@
             </div>
         </div>
     </section>
-    
+    -->
 
     <!-- Custom JS -->
     <script src="js/user_script.js"></script>
