@@ -86,3 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+//about page java script part
+
+window.addEventListener('scroll', function () {
+    const section = document.querySelector('.who-we-are');
+    const position = section.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+
+    if (position < screenPosition) {
+        section.classList.add('active');
+    }
+});
+
