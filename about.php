@@ -48,10 +48,11 @@
         </div>
     </section>
     
-    <!-- Who We Are 
+    <!-- Who We Are -->
     <div class="who">
         <div class="box-container">
-            <div class="heading">
+            <div class="box">
+                <div class="heading">
                 <h2>Who We Are</h2>
                 <img src="image/about-banner.jpg">
                     <p>
@@ -61,19 +62,30 @@
                         <a href="shop.php" class="btn" >explore our shop </a>
                         <a href="shop.php" class="btn" >visit our shop </a>
                     </div>
+                </div>
+            </div>
+            <div class="img-box">
+                <img src="image/banner.jpg" class="img">
+                <img src="image/about-banner.jpeg" class="img">
             </div>
             
         </div>
-        -->
+        <div class="exclusive">
+            <div class="details">
+                <h1>Exclusive Collection<br>summer collection 2025</h1>
+                <p></p>
+                <a href="shop.php" class="btn">Shop Now</a>
+            </div>
+        </div>
 
     
 
     
-
 
 
     <!-- Custom JS -->
     <script src="js/user_script.js"></script>
-    <?php include 'components/alert.php'; ?>
+        <?php include('components/alert.php'); ?>
+        <?php include('components/footer.php'); ?>
 </body>
 </html>

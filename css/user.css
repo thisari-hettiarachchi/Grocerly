@@ -912,6 +912,7 @@ footer .bottom a:hover {
     padding: 100px 20px;
     color: black;
     position: relative;
+    top:110px;
     z-index: 1;
     text-align: center;
 }
@@ -964,5 +965,68 @@ footer .bottom a:hover {
 
 .banner a:hover {
     text-decoration: underline;
+}
+
+.who {
+    padding: 5%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    position: relative;
+    top:100px;
+    z-index: -1;
+    text-align: center;
+    
+}
+.who .box{
+    line-height: 1.5;
+    text-align: center;
+    position:relative;
+    margin: 1rem;
+
+}
+
+.who img-box{
+    position:relative;
+    
+}
+.who .img-box .shop{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:0;
+    height:10rem;
+}
+.who .img-box.img{
+    width:100%;
+    box-shadow: var(--box-shadow);
+}
+.who p{
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin: 1rem 0;
+}
+.who .flex-btn{
+    justify-content: center;
+}
+.exlusive{
+    background-image: url('../image/exlusive.jpg');
+    background-size: cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-left:6%;
+    line-height: 1.5;
+}
+exclusive h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.exclusive p{
+    font-size: 1.2rem;
+    margin:1 rem 0;
 }
 
