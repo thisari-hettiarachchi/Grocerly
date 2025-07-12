@@ -1351,3 +1351,37 @@ footer .bottom a:hover {
   background-color: #1f6b2d;
 }
 
+/*order page*/
+
+.banner1 {
+    background-image: url('../images/orderimg1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: black;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    text-align: center;
+}
+
+.banner1::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%; 
+    z-index: -1;
+}
+
+.banner1 .details {
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 40px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    max-width: cover;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+

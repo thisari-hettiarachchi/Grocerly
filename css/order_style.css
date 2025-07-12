@@ -1,3 +1,26 @@
+:root {
+    --primary-color: #10b981;
+    --primary-dark: #059669;
+    --text-primary: #1f2937;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+    --text-placeholder: #9ca3af;
+    --border-color: #e5e7eb57;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
 .banner1 {
     background-image: url('../images/orderimg1.webp');
     background-size: cover;
@@ -6,7 +29,7 @@
     padding: 100px 20px;
     color: black;
     position: relative;
-    top:110px;
+    margin: auto;
     z-index: 1;
     text-align: center;
 }
