@@ -15,14 +15,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About | Grocerly</title>
     
-    <!-- Favicon -->
     <link rel="stylesheet" type="text/css" href="css/user.css">
         
-        <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
+    <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-        <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
+
+        
 </head>
 
 <body>
@@ -126,9 +127,9 @@
     </section>
     -->
 
-    <!-- Custom JS -->
     <script src="js/user_script.js"></script>
-        <?php include('components/alert.php'); ?>
-        <?php include('components/footer.php'); ?>
-</body>
+    <?php include('components/alert.php'); ?>
+    <?php include('components/footer.php'); ?>
+    
+    </body>
 </html>
