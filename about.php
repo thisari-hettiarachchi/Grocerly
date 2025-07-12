@@ -99,7 +99,7 @@
 
 
     
-   <!-- Who We Are Section -->
+   <!-- Who We Are Section 
     <section class="who-we-are">
   <div class="container">
     <img src="image/grocerly.webp" alt="Grocerly Team" class="top-image">
@@ -115,7 +115,7 @@
   </div>
 </section>
 
-        <!-- Exclusive Collection 
+      Exclusive Collection 
         <div class="exclusive">
             <div class="details">
                 <h1>Exclusive Collection<br>Summer Collection 2025</h1>
