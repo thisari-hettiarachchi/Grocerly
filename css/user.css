@@ -900,9 +900,6 @@ footer .bottom a:hover {
 }
 
 
-
-
-
 /* about page hero section*/
 .banner {
     background-image: url('../images/banner.jpg');
@@ -936,7 +933,12 @@ footer .bottom a:hover {
     text-align: center;
 }
 
-
+.banner  h2 {
+  font-size: 32px;
+  color: #2b8a3e;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
 .banner h1 {
     font-size: 48px;
     margin-bottom: 20px;
@@ -967,103 +969,154 @@ footer .bottom a:hover {
     text-decoration: underline;
 }
 
-.who-we-are {
-  background: #f9f9f9;
+.awards-section {
   padding: 60px 20px;
-   padding: 5%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 100px 20px;
-    position: relative;
-    top:100px;
-    z-index: 2000;
-    text-align: center;
+  background-color: #fdfdfd;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  align-items: center;
+.awards-section .container {
   max-width: 1200px;
-  margin: auto;
-   padding: 5%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.text-content {
-  flex: 1 1 400px;
+.image-side {
+  flex: 1 1 40%;
   text-align: center;
 }
 
-.text-content img {
-  width: 100%;
-  max-width: 300px;
-  margin: 20px 0;
+.image-side img {
+  max-width: 100%;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.text-content h2 {
+.text-box {
+  flex: 1 1 55%;
+  background: #fff;
+  border-left: 6px solid #2b8a3e;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.text-box h2 {
+  font-size: 26px;
+  color: #2b8a3e;
+  margin-bottom: 20px;
+}
+/* about us who we are and awards*/
+.row-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.box-left, .box-right {
+  flex: 1 1 48%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  color: #444;
+}
+
+.box-left:hover, .box-right:hover {
+  transform: translateY(-5px);
+}
+
+.box-left h2, .box-right h2 {
+  font-size: 26px;
+  color: #2b8a3e;
+  border-bottom: 2px solid #2b8a3e;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.award-list {
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #333;
+}
+
+.award-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.box-left p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.highlight {
+  color: #2b8a3e;
+  font-weight: 600;
+  background-color: #e8f5e9;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .row-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .box-left, .box-right {
+    flex: 1 1 100%;
+  }
+
+  .box-left h2, .box-right h2 {
+    text-align: center;
+  }
+}
+
+/*final part for about page*/
+.grocerly-intro {
+  padding: 60px 20px;
+  background-color: #f8fcf9;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e2e2e;
+}
+
+.grocerly-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.grocerly-intro h2 {
   font-size: 32px;
   color: #2b8a3e;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-.text-content p {
+.grocerly-intro p {
   font-size: 18px;
-  color: #333;
-  line-height: 1.6;
+  line-height: 1.8;
+  margin-bottom: 20px;
 }
 
-.btn-group {
-  margin-top: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #2b8a3e;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  margin: 5px;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background-color: #256d33;
-}
-
-.image-gallery {
-  flex: 1 1 400px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.image-gallery .img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.exclusive {
-  margin-top: 80px;
-  background: #e9f5ec;
-  padding: 60px 20px;
+.closing-message {
+  font-style: italic;
+  color: #2b8a3e;
+  font-size: 20px;
+  margin-top: 30px;
   text-align: center;
 }
 
-.exclusive .details h1 {
-  font-size: 36px;
-  color: #2b8a3e;
-}
-
-.exclusive .details p {
-  font-size: 18px;
-  color: #555;
-  margin: 15px 0;
-}
