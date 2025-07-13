@@ -33,7 +33,9 @@
     <body>
         <?php include('components/user_header.php'); ?>
 
-        
+        <video width="600" controls>
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
 
         <script src="js/user_script.js"></script>
         <?php include('components/alert.php'); ?>
