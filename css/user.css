@@ -1319,4 +1319,61 @@ footer .bottom a:hover {
   margin-top: 30px;
   text-align: center;
 }
+/* oeder page hero section
+.banner1{
+    background-image: url('../images/order.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 130px 50px; 
+    position: relative;
+    top:110px;
+    z-index: 1;
 
+    <video width="600" controls>
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
+    
+}*/
+
+.banner1 {
+    background-image: url('../images/order.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    top:110px;
+    position: relative;
+    
+}
+.banner1 .header {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    padding: 20px 40px;
+    border-radius: 10px;
+    top:250px;
+    position: relative;
+}
+
+.banner1 .header p {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+video {
+    display: block;
+    max-width: 100%;
+    width: 600px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    top:450px;
+    position: relative;
+}

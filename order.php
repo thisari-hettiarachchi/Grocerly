@@ -33,13 +33,19 @@
     <body>
         <?php include('components/user_header.php'); ?>
 
-        <video width="600" controls>
-            <source src="your-video.mp4" type="video/mp4">
-        </video>
+        <section class="banner1">
+            <div class="header">
+                <p>My Orders</p>
+            </div>
+        </section>
+
+            <video width="600" controls>
+                <source src="your-video.mp4" type="video/mp4">
+            </video>
 
         <script src="js/user_script.js"></script>
         <?php include('components/alert.php'); ?>
-        <?php include('components/footer.php'); ?>
+       
 
     </body>
 
