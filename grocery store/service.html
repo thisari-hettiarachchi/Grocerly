@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, p {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .separator {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service-card {
+            flex: 1 1 300px;
+            max-width: 400px;
+            border: 1px solid chocolate;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .service-card img {
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+        }
+
+        .service-card h1 b {
+            color: darkorange;
+        }
+
+        .service-card p {
+            text-align: justify;
+        }
+
+        .contact-btn {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .contact-btn a {
+            text-decoration: none;
+            background-color: chocolate;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .contact-btn a:hover {
+            background-color: darkorange;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-card {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Our Services</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus qui expedita repellat commodi aperiam, libero rerum explicabo harum, exercitationem, at provident recusandae odit! Nulla ipsam quidem sequi corporis minima!</p>
+
+    <img src="images/separator.png" alt="separator" class="separator">
+
+    <div class="services">
+        <div class="service-card">
+            <img src="images/delivery.png" alt="Free Shipping">
+            <h1><b>Free Shipping Fast</b></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae officia quos delectus fugit quisquam rerum eaque eligendi aliquid, harum eos reprehenderit magni, repellat impedit, minima consectetur maiores sequi vitae omnis.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="images/return.png" alt="Money Back Guarantee">
+            <h1><b>Money Back Guarantee</b></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, eveniet. Perspiciatis maiores voluptas recusandae laborum ratione. Sequi tempore excepturi similique ipsa, quod, laboriosam cum quasi corrupti sunt perferendis eaque deserunt!</p>
+        </div>
+
+        <div class="service-card">
+            <img src="images/discount.png" alt="Online Support">
+            <h1><b>Online Support 24/7</b></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, modi. Deleniti, ipsam qui! Commodi iusto aspernatur doloribus quisquam nesciunt. Vel ex temporibus rem eaque est aliquam! Illum quos quod possimus?</p>
+        </div>
+    </div>
+
+    <div class="contact-btn">
+        <a href="Our contact details.html">Our Contact Details</a>
+    </div>
+
+</body>
+</html>

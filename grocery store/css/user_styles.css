@@ -1,0 +1,14 @@
+/* All the CSS styles from the original code */
+:root {
+    --primary-color: #10b981;
+    --primary-dark: #059669;
+    /* ... rest of the CSS variables */
+}
+
+/* All other CSS rules from the original code */
+body {
+    font-family: 'Inter', sans-serif;
+    /* ... */
+}
+
+/* Continue with all the CSS from the original code */
