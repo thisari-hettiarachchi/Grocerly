@@ -35,7 +35,8 @@
 
         <section class="banner1">
             <div class="header">
-                <p>My Orders</p>
+                <p class="sub">🛒 My Orders</p>
+                <p class="subtitle">Track, manage, and view all your recent purchases in one place.</p>
             </div>
         </section>
 

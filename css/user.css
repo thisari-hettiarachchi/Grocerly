@@ -1353,20 +1353,31 @@ footer .bottom a:hover {
     
 }
 .banner1 .header {
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
-    padding: 20px 40px;
-    border-radius: 10px;
     top:250px;
     position: relative;
-}
-
-.banner1 .header p {
-    color: white;
-    font-size: 32px;
+} 
+.banner1 .sub {
+    color: #0bad46;
+    font-size: 36px;
     font-weight: bold;
     margin: 0;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.banner1 .sub:hover {
+    color: #32e3cc;
+    transform: scale(1.05);
+}
+
+.banner1 .subtitle {
+    color: #1170b9;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+    line-height: 1.6;
+    max-width: 600px;
+}
 video {
     display: block;
     max-width: 100%;
@@ -1377,3 +1388,4 @@ video {
     top:450px;
     position: relative;
 }
+
