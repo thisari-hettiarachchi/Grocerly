@@ -105,8 +105,6 @@
             </form>
         </div>
     </section>
-               
-        
 
         <script src="js/user_script.js"></script>
         <?php include('components/alert.php'); ?>
