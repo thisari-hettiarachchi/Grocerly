@@ -1353,7 +1353,7 @@ footer .bottom a:hover {
     
 }
 .banner1 .header {
-    top:250px;
+    top:260px;
     position: relative;
 } 
 .banner1 .sub {
@@ -1371,12 +1371,13 @@ footer .bottom a:hover {
 }
 
 .banner1 .subtitle {
-    color: #1170b9;
+    color: #000203;
     font-size: 18px;
     font-weight: 300;
     margin-top: 10px;
     line-height: 1.6;
     max-width: 600px;
+    text-decoration: solid;
 }
 video {
     display: block;
