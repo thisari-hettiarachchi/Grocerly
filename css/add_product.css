@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #10b981;
+  --primary-dark: #059669;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-placeholder: #9ca3af;
+  --border-color: #e5e7eb;
+  --white-alfa-25: rgba(255, 255, 255, 0.25);
+  --white-alfa-40: rgba(255, 255, 255, 0.4);
+  --backdrop-filter: blur(20px);
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.add_products .heading {
+  text-align: center;
+  line-height: 1.5;
+  margin-top: -4rem;
+}
+
+.add_products .heading h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+.form-add-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(136, 134, 134, 0.515);
+}
+
+form.Register {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.Col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.Input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.Input-field p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.Input-field p span {
+  color: red;
+  margin-left: 4px;
+}
+
+.Box {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff9f9;
+  box-shadow: 0 1px 3px rgb(171, 224, 177);
+  transition: border-color 0.3s ease;
+}
+.Box:hover,
+.Box:focus {
+  border: 1px solid var(--primary-color);
+}
+textarea.Box {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.Box {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20fill%3D%22%23666%22%20height%3D%2210%22%20width%3D%2210%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 0.8rem;
+}
+
+.Flex-btn {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.Btn {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.Btn:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px) scale(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .Col {
+    grid-template-columns: 1fr;
+  }
+
+  .Flex-btn {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
