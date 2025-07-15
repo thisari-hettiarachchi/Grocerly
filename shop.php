@@ -6,23 +6,33 @@ $items = [
   ["Tomatoes", 400, "250g", "images/tomatoes.jpg", "Hot Deal", "Fruits & Vegetables"]
 ];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grocery</title>
-  <link rel="stylesheet" type="text/css" href="css/shop.css">
-  
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Shop Page</title>
+
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+        <link rel="stylesheet" type="text/css" href="css/shop.css">
+        
+        <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+        <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
+
+    </head>
+
+    <body>
 
 <?php include('components/user_header.php'); ?>
 
 <!-- === FLAT PRODUCT GRID === -->
-<main class="container grid">
+<main class="shop-container grid">
 <?php foreach($items as $item): ?>
   <div class="card">
     <div class="img-box">
@@ -45,5 +55,6 @@ $items = [
 </main>
 
 <script src="shop.js"></script>
+<?php include('components/footer.php'); ?>
 </body>
 </html>
