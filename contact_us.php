@@ -8,7 +8,7 @@
 
         <title>Home Page</title>
 
-        <link rel="stylesheet" type="text/css" href="css/user.css">
+        <link rel="stylesheet" type="text/css" href="css/user_styles.css">
         
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
@@ -101,7 +101,7 @@
     </body>
 
 </html>
-=======
+
 <?php
 @include 'config.php';
 session_start();
@@ -126,7 +126,6 @@ if (isset($_POST['send'])) {
         $stmt = $conn->prepare("INSERT INTO message(user_id, name, email, number, message) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$user_id, $name, $email, $number, $msg]);
         echo "<script>alert('Message sent successfully!');</script>";
-    }
+    }
 }
 ?>
->>>>>>> f8f70838435924997cb100a756aab13b5c024ef1
