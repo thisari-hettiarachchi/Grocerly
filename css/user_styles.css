@@ -1319,4 +1319,74 @@ footer .bottom a:hover {
   margin-top: 30px;
   text-align: center;
 }
+/* oeder page hero section
+.banner1{
+    background-image: url('../images/order.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 130px 50px; 
+    position: relative;
+    top:110px;
+    z-index: 1;
+
+    <video width="600" controls>
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
+    
+}*/
+
+.banner1 {
+    background-image: url('../images/order.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    top:110px;
+    position: relative;
+    
+}
+.banner1 .header {
+    top:260px;
+    position: relative;
+} 
+.banner1 .sub {
+    color: #0bad46;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.banner1 .sub:hover {
+    color: #32e3cc;
+    transform: scale(1.05);
+}
+
+.banner1 .subtitle {
+    color: #000203;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+    line-height: 1.6;
+    max-width: 600px;
+    text-decoration: solid;
+}
+video {
+    display: block;
+    max-width: 100%;
+    width: 600px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    top:450px;
+    position: relative;
+}
 
