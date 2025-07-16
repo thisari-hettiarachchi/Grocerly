@@ -19,7 +19,7 @@
 
         <title>Home Page</title>
 
-        <link rel="stylesheet" type="text/css" href="css/user.css">
+        <link rel="stylesheet" type="text/css" href="css/user_styles.css">
         
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
@@ -118,7 +118,6 @@
             </div>
         </section>        
         
-
         <script src="js/user_script.js"></script>
         <?php include('components/alert.php'); ?>
         <?php include('components/footer.php'); ?>

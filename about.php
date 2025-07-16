@@ -15,15 +15,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About | Grocerly</title>
     
-    <link rel="stylesheet" type="text/css" href="css/user.css">
+    <!-- Favicon -->
+    <link rel="stylesheet" type="text/css" href="css/user_styles.css">
         
-    <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
+        <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-    <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
-
-        
+        <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -74,6 +73,8 @@
         </div>
     </section>
 
+    
+
     <section class="grocerly-intro">
         <div class="grocerly-content">
             
@@ -102,19 +103,19 @@
     
    <!-- Who We Are Section 
     <section class="who-we-are">
-  <div class="container">
-    <img src="image/grocerly.webp" alt="Grocerly Team" class="top-image">
-    <h2>Who We Are</h2>
-    <p>
-      At <strong>Grocerly</strong>, we are a team of passionate individuals dedicated to transforming grocery shopping. 
-      We combine smart technology with efficient logistics to deliver a smooth and reliable experience.
-    </p>
-    <div class="btn-group">
-      <a href="shop.php" class="btn">Explore Our Shop</a>
-      <a href="shop.php" class="btn">Visit Our Store</a>
-    </div>
-  </div>
-</section>
+        <div class="container">
+            <img src="image/grocerly.webp" alt="Grocerly Team" class="top-image">
+            <h2>Who We Are</h2>
+            <p>
+            At <strong>Grocerly</strong>, we are a team of passionate individuals dedicated to transforming grocery shopping. 
+            We combine smart technology with efficient logistics to deliver a smooth and reliable experience.
+            </p>
+            <div class="btn-group">
+            <a href="shop.php" class="btn">Explore Our Shop</a>
+            <a href="shop.php" class="btn">Visit Our Store</a>
+            </div>
+        </div>
+    </section>
 
       Exclusive Collection 
         <div class="exclusive">
@@ -126,10 +127,13 @@
         </div>
     </section>
     -->
+    
 
+    <!-- Custom JS -->
     <script src="js/user_script.js"></script>
     <?php include('components/alert.php'); ?>
     <?php include('components/footer.php'); ?>
-    
-    </body>
+
+    <button id="scrollTopBtn" title="Go to top">⬆️ </button>
+</body>
 </html>

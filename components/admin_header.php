@@ -1,7 +1,9 @@
 <?php 
     include_once '../components/connect.php';
 
+    if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
 
     $fetch_profile = null;
 
@@ -29,7 +31,7 @@
         <?php 
             if ($fetch_profile) {
         ?>
-            <img src="<?= !empty($fetch_profile['image']) ? 'uploaded_files/' . htmlspecialchars($fetch_profile['image']) : '../images/default.jpg'; ?>" class="logo-img" width="100">
+            <img src="<?= !empty($fetch_profile['image']) ? '../uploaded_files/' . htmlspecialchars($fetch_profile['image']) : '../images/default.jpg'; ?>" class="logo-img" width="100">
             <p><?= $fetch_profile['name']; ?></p>
             <div class="flex-btn">
                 <a href="profile.php" class="btn">Profile</a>
@@ -47,7 +49,7 @@
     <div class="sidebar">
         <?php if ($fetch_profile): ?>
             <div class="profile">
-                <img src="<?= !empty($fetch_profile['image']) ? 'uploaded_files/' . htmlspecialchars($fetch_profile['image']) : '../images/default.jpg'; ?>" class="logo-img" width="100">
+                <img src="<?= !empty($fetch_profile['image']) ? '../uploaded_files/' . htmlspecialchars($fetch_profile['image']) : '../images/default.jpg'; ?>" class="logo-img" width="100">
                 <p><?= $fetch_profile['name']; ?></p>
             </div>
         <?php else: ?>
