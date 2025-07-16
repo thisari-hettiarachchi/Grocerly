@@ -89,6 +89,15 @@
 
                     </div>
                 </div>
+                <p class="date">
+                <i class="bx bxs-calender"></i><span><?= $fetch_order['date']; ?></span></p>
+                
+                <div class="details">
+                    <p class="price">$<?= $fetch_product['price']; ?> x <?= $fetch_order['qty'];?></p>
+                    <p class="name"><?= $fetch_product['name'];?></p>
+                    <p class="grad_total">total amount payable : <span>$<?= $grand_total?></span></p>
+
+                </div>
             </div>
         </div>
         <?php

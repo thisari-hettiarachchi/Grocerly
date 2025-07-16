@@ -67,9 +67,7 @@ if(isset($_COOKIE['user_id'])){
         </div>
         <div class="content">
         <p class="date">
-            <i class="bx bxs-calender"></i><span><?= $fetch_orders['date']; ?>
-
-                </p>
+            <i class="bx bxs-calender"></i><span><?= $fetch_orders['date']; ?></span></p>
             </div>
             <div class="row">
                 <h3 class="name"><?= $fetch_products['name']; ?></h3>
