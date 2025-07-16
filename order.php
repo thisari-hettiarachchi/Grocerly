@@ -76,14 +76,10 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
         }
         ?>
     </div>
-    
-
     <video width="600" controls>
         <source src="your-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
-
     <script src="js/user_script.js"></script>
     <?php include('components/alert.php'); ?>
 

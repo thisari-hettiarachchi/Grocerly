@@ -1,17 +1,4 @@
-
-
-    <?php 
-    include 'components/connect.php';
-
-    if (isset($_COOKIE['user_id'])) {
-        $user_id = $_COOKIE['user_id'];
-    }else{
-        $user_id = '';
-    }
-
-
-?>
-
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +8,7 @@
 
         <title>Home Page</title>
 
-        <link rel="stylesheet" type="text/css" href="css/user.css">
+        <link rel="stylesheet" type="text/css" href="css/user_styles.css">
         
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
@@ -33,6 +20,7 @@
 
     <body>
         <?php include('components/user_header.php'); ?>
+       
         <!-- Section 1: Contact Us Text -->
     <section class="contact-section">
         <h1>Contact Us</h1>
@@ -84,7 +72,7 @@
         </div>
     </section>
 
-    <!-- Section 3: Contact Form -->
+    <!-- Section 3: Contact Form and Footer -->
     <section class="form-section" id="contact-form">
         <div class="form-container">
             <h1>Get in Touch</h1>
@@ -114,5 +102,30 @@
 
 </html>
 
+<?php
+@include 'config.php';
+session_start();
 
+// Dummy fallback if user is not logged in
+$user_id = $_SESSION['user_id'] ?? 0;
 
+if (isset($_POST['send'])) {
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $number = filter_var($_POST['number'], FILTER_SANITIZE_STRING);
+    $msg = filter_var($_POST['msg'], FILTER_SANITIZE_STRING);
+
+    // Check if same message already exists
+    $stmt = $conn->prepare("SELECT * FROM message WHERE name = ? AND email = ? AND number = ? AND message = ?");
+    $stmt->execute([$name, $email, $number, $msg]);
+
+    if ($stmt->rowCount() > 0) {
+        echo "<script>alert('You have already sent this message.');</script>";
+    } else {
+        // Insert new message
+        $stmt = $conn->prepare("INSERT INTO message(user_id, name, email, number, message) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$user_id, $name, $email, $number, $msg]);
+        echo "<script>alert('Message sent successfully!');</script>";
+    }
+}
+?>
