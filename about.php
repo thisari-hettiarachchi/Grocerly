@@ -6,6 +6,8 @@
     } else {
         $user_id = '';
     }
+    echo "<h2>Contact Us</h2>";
+    echo "<p>You can reach us at: <strong>support@yourdomain.com</strong></p>";
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +43,8 @@
                 Whether you're stocking up for the week or grabbing last-minute items, Grocerly is here to make your life easier. We’re committed to quality, affordability, and exceptional service,
                 so you can spend less time shopping and more time enjoying what matters most.
             </p>
-            <span><a href="dashboard.php">Home</a> <i class="bx bx-right-arrow-alt"></i> About Us</span>
+            <span><a href="home.php">Home</a> <i class="bx bx-right-arrow-alt"></i> <a href="about,php">About Us</a></span>
+            
         </div>
     </section>
 
@@ -72,6 +75,12 @@
             </ul>
         </div>
     </section>
+
+     <div class="about-btn-container">
+        <form action="contact.php" method="get">
+            <a href="shop.php" class="about-btn">Shop Now</a>
+        </form>
+    </div>
 
     
 
@@ -127,6 +136,7 @@
         </div>
     </section>
     -->
+   
     
 
     <!-- Custom JS -->

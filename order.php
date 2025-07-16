@@ -1,9 +1,13 @@
 <?php 
 include 'components/connect.php';
+if(isset($_COOKIE['user_id'])){
+    $user_id = $_COOKIE['user_id'];
+}else{
+    $user_id = '';
+    header('location:login.php');
+}
 
-$user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,7 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
         <title>Order Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
-        
+
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">

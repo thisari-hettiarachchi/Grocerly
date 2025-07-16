@@ -1378,10 +1378,31 @@ footer .bottom a:hover {
 }
 
 #scrollTopBtn:hover {
-  background-color: #1f6b2d;
+  background-color: #101010;
+}
+.about-btn-container {
+    text-align: center;
+    margin-top: 30px;
 }
 
-/*order page*/
+.about-btn {
+    background-color: #2cd48b;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-btn:hover {
+    background-color: #218838;
+}
+
+
+/*-- order page --*/
 
 .banner1 {
   background-image: url("../images/orderimg1.webp");
@@ -1389,7 +1410,7 @@ footer .bottom a:hover {
   background-position: center;
   background-repeat: no-repeat;
   padding: 100px 20px;
-  color: black;
+  color: rgb(22, 215, 174);
   position: relative;
   margin: auto;
   z-index: 1;
@@ -1443,7 +1464,7 @@ footer .bottom a:hover {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.9); /* light card over dark image */
+  background-color: rgba(2, 203, 169, 0.9); /* light card over dark image */
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(16, 194, 158, 0.3);
@@ -1452,7 +1473,7 @@ footer .bottom a:hover {
 }
 
 .order_banner .details .sub {
-  font-size: 1.75rem;
+  font-size: 100px;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #10c29e;
@@ -1560,7 +1581,6 @@ footer .bottom a:hover {
     font-size: 18px;
     padding: 50px 0;
 }
-
 
 
 
