@@ -24,6 +24,18 @@
         header("Location: login.php");
         exit();
     }
+    //delete product from database 
+
+   if (isset($_POST['delete'])) {
+    $p_id = $_POST['product_id'] ?? 0;
+    $p_id = filter_var($p_id, FILTER_SANITIZE_NUMBER_INT);
+
+    $delete_product = $conn->prepare("DELETE FROM `product` WHERE product_id = ?");
+    $delete_product->execute([$p_id]);
+
+    $success_msg[] = 'Product deleted successfully';
+}
+
 
 ?>
 
@@ -72,6 +84,7 @@
                     ?>
 
                     <form action="" method="post" class="box">
+                    <input type="hidden" name="product_id" value="<?= $fetch_products['product_id']; ?>">
                     <div class="icon">
                         <div class="icon-box">
                             <img src="../uploaded_files/<?= $fetch_products['image']?>" class="img1">
@@ -82,9 +95,9 @@
                     <div class="content">
                         <div class="title"><?= $fetch_products['name'];?></div>
                         <div class="flex-btn">
-                            <a href="edit_product.php?id=<?=$fetch_products['id'];?>" class="btn">edit</a>
-                            <button type="submit" name="delet" class="btn">delet</button>
-                            <a href="read_product.php?post_id=<?=$fetch_products['id'];?>" class="btn">read</a>
+                            <a href="edit_product.php?product_id=<?=$fetch_products['product_id'];?>" class="btn">edit</a>
+                            <button type="submit" name="delete" onclick="return confirm('want to delete this products')" class="btn">delete</button>
+                            <a href="read_product.php?post_id=<?=$fetch_products['product_id'];?>" class="btn">read</a>
                         </div>
 
                     </div>

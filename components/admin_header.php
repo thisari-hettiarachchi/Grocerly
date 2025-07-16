@@ -1,7 +1,9 @@
 <?php 
     include_once '../components/connect.php';
 
+    if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
 
     $fetch_profile = null;
 

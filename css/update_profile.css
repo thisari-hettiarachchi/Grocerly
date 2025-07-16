@@ -1,0 +1,198 @@
+:root {
+  --primary-color: #10b981;
+  --primary-dark: #059669;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-placeholder: #9ca3af;
+  --border-color: #e5e7eb;
+  --white-alfa-25: rgba(255, 255, 255, 0.25);
+  --white-alfa-40: rgba(255, 255, 255, 0.4);
+  --backdrop-filter: blur(20px);
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Form-container {
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.Form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  border-radius: 24px 24px 0 0;
+}
+
+.Form-container h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 2.5remm;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Form-container .Register .Flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Form-container .Register .Col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Form-container .login .Input-field {
+  margin-bottom: 1.5rem;
+}
+
+.Form-container .Input-field {
+  position: relative;
+}
+
+.Form-container .Input-field p {
+  display: block;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.Form-container .Input-field .Box {
+  width: 100%;
+  padding: 1rem calc(1rem + 0.5rem);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  font-weight: 500;
+  padding-right: calc(3rem+ 0.5rem);
+}
+
+.Form-container .Input-field .Box:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.Form-container .Input-field .Box::placeholder {
+  color: var(--text-placeholder);
+  font-weight: 400;
+}
+
+.Form-container .password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 70%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.Form-container .password-toggle:hover {
+  color: var(--primary-color);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.Form-container .Btn {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.Form-container .Btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.Form-container .Btn:active {
+  transform: translateY(0);
+}
+
+.Form-container .link {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.Form-container .link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.Form-container .link a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.Form-container .update .Flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Form-container .update .Col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

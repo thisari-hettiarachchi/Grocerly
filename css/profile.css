@@ -1,0 +1,52 @@
+/* Profile Section Centering */
+.box_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+/* Profile Box */
+.box {
+    border: 2px solid #00b16a;
+    border-radius: 10px;
+    padding: 30px 40px;
+    background-color: #ffffffcc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Image Styling */
+.box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #00b16a;
+}
+
+/* Name Text */
+.box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: capitalize;
+}
+
+/* Button */
+.btn {
+    padding: 10px 20px;
+    background-color: #00b16a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 177, 106, 0.3);
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #009e5a;
+}

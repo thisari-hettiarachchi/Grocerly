@@ -1,0 +1,167 @@
+:root {
+  --primary-color: #10b981;
+  --primary-dark: #059669;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-placeholder: #9ca3af;
+  --border-color: #e5e7eb;
+  --white-alfa-25: rgba(255, 255, 255, 0.25);
+  --white-alfa-40: rgba(255, 255, 255, 0.4);
+  --backdrop-filter: blur(20px);
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.read_products .heading {
+  text-align: center;
+  line-height: 1.5;
+  margin-top: -4rem;
+}
+
+.read_products .heading h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+/* Container for the entire product section */
+.show_products .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Box around each product */
+.show_products .box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.show_products .box:hover {
+  transform: translateY(-5px);
+}
+
+/* Status text */
+.show_products .status {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+/* Enhance status appearance under image */
+.product-slider .status {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.05); /* subtle background */
+}
+
+/* You can use classes instead if desired */
+.status.active {
+  color: limegreen;
+}
+
+.status.deactive {
+  color: red;
+}
+/* Product slider */
+.product-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Product image */
+.slider-images {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.slider-images img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Product price */
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2ecc71;
+  margin-bottom: 0.5rem;
+}
+
+/* Product title */
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Product description */
+.content {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.flex-btn {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.flex-btn .btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.flex-btn .btn:hover {
+  background-color: #2980b9;
+}
+
+/* Empty message styling */
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+.empty .btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.empty .btn:hover {
+  background-color: #27ae60;
+}
