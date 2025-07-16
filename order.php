@@ -52,12 +52,27 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
                 </div>
             </a>
         </div>
+        <div class="content">
+        <p class="date">
+            <i class="bx bxs-calender"></i><span><?= $fetch_orders['date']; ?>
+
+                </p>
+            </div>
+            <div class="row">
+                <h3 class="name"><?= $fetch_products['name']; ?></h3>
+                <p class="price">$<?= $fetch_products['price']; ?>-/</p>
+                <p class="status" style="color:<?php if($fetch_orders['status']=='delivered'){echo "green";}elseif ($fetch_orders['status']=='canceled'{echo "red"}else{echo "orange";})?>"><?= $fetch_orders['status']; ?></p>
+            </div>
         <?php
                     }
                 }
             }
         } else {
-            echo "<p class='no-orders'>No orders found.</p>";
+            echo '
+                <div class="empty">
+                    <p>no order take placed yet! </p>
+                </div>
+                ';
         }
         ?>
     </div>
@@ -67,5 +82,6 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
     </video>
     <script src="js/user_script.js"></script>
     <?php include('components/alert.php'); ?>
-</body>
+
+    </body>
 </html>
