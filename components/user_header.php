@@ -43,7 +43,7 @@
             <a href="about.php" class="<?= $page == 'about.php' ? 'active' : '' ?>">About Us</a>
             <a href="shop.php" class="<?= $page == 'shop.php' ? 'active' : '' ?>">Shop</a>
             <a href="order.php" class="<?= $page == 'order.php' ? 'active' : '' ?>">Order</a>
-            <a href="contact-us.php" class="<?= $page == 'contact-us.php' ? 'active' : '' ?>">Contact Us</a>
+            <a href="contact_us.php" class="<?= $page == 'contact-us.php' ? 'active' : '' ?>">Contact Us</a>
         </nav>
         
         <form action="search_product.php" method="post" class="search-form">
