@@ -13,7 +13,7 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
 
         <title>Order Page</title>
 
-        <link rel="stylesheet" type="text/css" href="css/user.css">
+        <link rel="stylesheet" type="text/css" href="css/user_styles.css">
         
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
