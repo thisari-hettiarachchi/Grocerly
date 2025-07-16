@@ -68,6 +68,28 @@ if (isset($_POST['update'])) {
             $warning_msg[] = 'Please enter a new password';
         }
     }
+
+    // Image Upload
+    if (!empty($_FILES['image']['name'])) {
+        $image_name = $_FILES['image']['name'];
+        $image_tmp_name = $_FILES['image']['tmp_name'];
+        $image_folder = '../uploaded_files/' . $image_name;
+
+        $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+        $image_ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
+
+        if (in_array($image_ext, $allowed_extensions)) {
+            move_uploaded_file($image_tmp_name, $image_folder);
+
+            $update_image = $conn->prepare("UPDATE sellers SET image = ? WHERE seller_id = ?");
+            $update_image->execute([$image_name, $seller_id]);
+
+            $success_msg[] = 'Profile image updated successfully';
+        } else {
+            $warning_msg[] = 'Invalid image file format';
+        }
+    }
+
 }
 ?>
 
@@ -113,6 +135,10 @@ if (isset($_POST['update'])) {
                         <div class="Input-field">
                             <p>Your Email</p>
                             <input type="email" name="email" value="<?= htmlspecialchars($seller_email); ?>" maxlength="50" class="Box">
+                        </div>
+                        <div class="input-field">
+                            <p>Select Pic</p>
+                            <input type="file" name="image" accept="image/*" class="box">
                         </div>
                     </div>
 
