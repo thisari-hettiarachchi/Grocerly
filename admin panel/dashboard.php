@@ -63,7 +63,7 @@
                     <div class="box">
                     <h3>Welcome!</h3>
                         <p><?= $seller_name; ?></p>
-                        <a href="update.php" class="btn">Update Profile</a>
+                        <a href="update_profile.php" class="btn">Update Profile</a>
                     </div>
                     <div class="box">
                         <?php 
