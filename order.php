@@ -11,7 +11,7 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Order Page</title>
 
-        <link rel="stylesheet" type="text/css" href="css/user_styles.css">
+        <link rel="stylesheet" type="text/css" href="css/user.css">
     <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
@@ -61,7 +61,17 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
             <div class="row">
                 <h3 class="name"><?= $fetch_products['name']; ?></h3>
                 <p class="price">$<?= $fetch_products['price']; ?>-/</p>
-                <p class="status" style="color:<?php if($fetch_orders['status']=='delivered'){echo "green";}elseif ($fetch_orders['status']=='canceled'{echo "red"}else{echo "orange";})?>"><?= $fetch_orders['status']; ?></p>
+<p class="status" style="color:<?php 
+    if ($fetch_orders['status'] == 'delivered') {
+        echo 'green';
+    } elseif ($fetch_orders['status'] == 'canceled') {
+        echo 'red';
+    } else {
+        echo 'orange';
+    }
+?>">
+    <?= $fetch_orders['status']; ?>
+</p>
             </div>
         <?php
                     }
