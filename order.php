@@ -21,6 +21,9 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
 
         <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
     </head>
 
 <body>
@@ -52,8 +55,8 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
             <a href="view_order.php?get_id=<?= $fetch_orders['id']; ?>">
                 <div class="icon">
                     <div class="icon-box">
-                        <img src="uploaded_files/<?= $fetch_products['thumb_one']; ?>" class="img1">
-                        <img src="uploaded_files/<?= $fetch_products['thumb_two']; ?>" class="img2">
+                        <img src="uploaded_files/<?= $fetch_products['fruitss']; ?>" class="img1">
+                        <img src="uploaded_files/<?= $fetch_products['boiler']; ?>" class="img2">
                     </div>
                 </div>
             </a>
@@ -92,6 +95,9 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
         }
         ?>
     </div>
+
+
+
     <video width="600" controls>
         <source src="your-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
