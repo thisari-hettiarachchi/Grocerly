@@ -11,23 +11,24 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Order Page</title>
 
-    <link rel="stylesheet" type="text/css" href="css/user.css">
+        <link rel="stylesheet" type="text/css" href="css/user_styles.css">
     <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
+    
     <?php include('components/user_header.php'); ?>
 
-    <section class="banner1">
+    <section class="order_banner">
         <div class="header">
             <p class="sub">🛒 My Orders</p>
             <p class="subtitle">Track, manage, and view all your recent purchases in one place.</p>
         </div>
     </section>
 
-    <div class="ox-container">
+    <div class="order-container">
         <?php
         $select_order = $conn->prepare("SELECT * FROM orders WHERE user_id = ?");
         $select_order->execute([$user_id]);
@@ -51,22 +52,40 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
                 </div>
             </a>
         </div>
+        <div class="content">
+        <p class="date">
+            <i class="bx bxs-calender"></i><span><?= $fetch_orders['date']; ?>
+
+                </p>
+            </div>
+            <div class="row">
+                <h3 class="name"><?= $fetch_products['name']; ?></h3>
+                <p class="price">$<?= $fetch_products['price']; ?>-/</p>
+                <p class="status" style="color:<?php if($fetch_orders['status']=='delivered'){echo "green";}elseif ($fetch_orders['status']=='canceled'{echo "red"}else{echo "orange";})?>"><?= $fetch_orders['status']; ?></p>
+            </div>
         <?php
                     }
                 }
             }
         } else {
-            echo "<p class='no-orders'>No orders found.</p>";
+            echo '
+                <div class="empty">
+                    <p>no order take placed yet! </p>
+                </div>
+                ';
         }
         ?>
     </div>
+    
 
     <video width="600" controls>
         <source src="your-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
+
     <script src="js/user_script.js"></script>
     <?php include('components/alert.php'); ?>
-</body>
+
+    </body>
 </html>
