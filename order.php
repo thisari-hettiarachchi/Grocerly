@@ -70,6 +70,7 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
             <div class="row">
                 <h3 class="name"><?= $fetch_products['name']; ?></h3>
                 <p class="price">$<?= $fetch_products['price']; ?>-/</p>
+<<<<<<< HEAD
 <p class="status" style="color:<?php 
     if ($fetch_orders['status'] == 'delivered') {
         echo 'green';
@@ -81,6 +82,13 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
 ?>">
     <?= $fetch_orders['status']; ?>
 </p>
+=======
+                <?php
+                $status = $fetch_orders['status'];
+                $color = ($status === 'delivered') ? 'green' : (($status === 'canceled') ? 'red' : 'orange');
+                ?>
+                <p class="status" style="color: <?= $color ?>;"><?= $status ?></p>
+>>>>>>> main
             </div>
         <?php
                     }
