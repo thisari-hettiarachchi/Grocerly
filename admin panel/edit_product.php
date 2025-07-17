@@ -164,7 +164,7 @@ if (isset($_POST['update']) || isset($_POST['draft'])) {
                             <textarea class="Box" name="content" ><?= $fetch_product['description'];?></textarea>
                         </div>
                         <div class="Flex-btn">
-                            <button type="submit" name="update" class="Btn">Ubdate</button>
+                            <button type="submit" name="update" class="Btn">Update</button>
                             <button type="submit" name="draft" class="Btn">Save as draft</button>
                             <a href="view_product.php?post_id=<?= $fetch_product['id'];?>" class="Btn">Go back</a>
                         </div>
