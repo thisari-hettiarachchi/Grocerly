@@ -35,7 +35,7 @@
             <p><?= $fetch_profile['name']; ?></p>
             <div class="flex-btn">
                 <a href="profile.php" class="btn">Profile</a>
-                <a href="../components/admin_logout.php" onclick="return confirm('Logout from this website?');" class="btn">Logout</a>
+                <a href="admin_logout.php" onclick="return confirm('Logout from this website?');" class="btn">Logout</a>
             </div>
         <?php } else { ?>
             <p>Profile not found.</p>
@@ -62,7 +62,7 @@
                 <li><a href="add_product.php"><i class="bx bxs-shopping-bags"></i>Add Products</a></li>
                 <li><a href="view_product.php"><i class="bx bxs-food-menu"></i>View Products</a></li>
                 <li><a href="user_account.php"><i class="bx bxs-user-detail"></i>Accounts</a></li>
-                <li><a href="../components/admin_logout.php" onclick="return confirm('Logout from this website?');"><i class="bx bx-log-out"></i>Logout</a></li>
+                <li><a href="admin_logout.php" onclick="return confirm('Logout from this website?');"><i class="bx bx-log-out"></i>Logout</a></li>
             </ul>
         </div>
         <h5>Find Us</h5>

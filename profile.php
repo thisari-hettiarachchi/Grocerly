@@ -13,6 +13,14 @@
         exit;
     }
 
+    $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ?");
+    $select_orders->execute([$user_id]);
+    $total_orders = $select_orders->rowCount();
+
+    $select_message = $conn->prepare("SELECT * FROM `message` WHERE user_id = ?");
+    $select_message->execute([$user_id]);
+    $total_message = $select_message->rowCount();
+
     $fetch_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
     $fetch_user->execute([$seller_email]);
 
@@ -37,7 +45,9 @@
         <title>User Profile Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
-        
+
+        <link rel="stylesheet" type="text/css" href="css/profile.css">
+
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -64,6 +74,25 @@
                     </div>
                     <h3 class="name"><?= htmlspecialchars($fetch_profile['name']); ?></h3>
                     <a href="update.php" class="btn"><i class='bx bx-pencil'></i> Update Profile</a>
+                </div>
+                <div class="box-container">
+
+                    <div class="box">
+                        <div class="flex">
+                            
+                            <h3><i class="bx bxs-menu"></i><?$total_orders; ?></h3>
+                            <a href="order.php" class="btn">view orders</a>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="flex">
+                            
+                            <h3><i class="bx bxs-chat"></i><?$total_message; ?></h3>
+                            <a href="contact_us.php" class="btn">send message</a>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="more-info">
                     <div class="title">

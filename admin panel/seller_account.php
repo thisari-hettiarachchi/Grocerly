@@ -24,21 +24,7 @@
         header("Location: login.php");
         exit();
     }
-    if(isset($_POST['delete_id'])){
-        $delete_id = $_POST['delete_id'];
-        $delete_id = filter_var($delete_id, FILTER_SANITIZE_NUMBER_INT);
-
-        $verify_delete = $conn->prepare("SELECT * FROM `message` WHERE message_id = ?");
-        $verify_delete->execute([$delete_id]);
-
-        if($verify_delete->rowCount()>0){
-            $delete_msg = $conn->prepare("DELETE FROM `message` WHERE message_id = ?");
-            $delete_msg->execute([$delete_id]);
-            $success_message[] = 'message delete';
-        }else{
-            $warning_msg[] = 'message already delete';
-        }
-    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -73,25 +59,24 @@
             <?php include '../components/admin_header.php'; ?>
             <section class="messages-container">
                 <div class="heading">
-                    <h1>Unread Messages</h1>
+                    <h1>Registered Sellers</h1>
                 </div>
                 <div class="Box_container">
                   <?php
-                     $select_msg = $conn->prepare("SELECT * FROM `message`");
-                     $select_msg->execute();
+                     $select_sellers = $conn->prepare("SELECT * FROM `sellers`");
+                     $select_sellers->execute();
 
-                     if($select_msg->rowCount() > 0){
-                        while($fetch_msg = $select_msg->fetch(PDO::FETCH_ASSOC)){
+                     if($select_sellers->rowCount() > 0){
+                        while($fetch_sellers = $select_sellers->fetch(PDO::FETCH_ASSOC)){
                        
                   ?>
                   <div class="Box">
-                    <h3 class="Name">Name: <?= $fetch_msg['name'];?></h3>
-                    <h4>Subject: <?= $fetch_msg['subject'];?></h4>
-                    <p>Message: <?= $fetch_msg['message'];?></p>
-                    <form action="" method="post">
-                        <input type="hidden" name="delete_id" value="<?= $fetch_msg['message_id'];?>">
-                        <button type="submit" name="delete" onclick="return confirm('want to delete thi message');" class="Btn">Delete message</button>
-                    </form>
+                    <img src="../uploaded_files/<?= $fetch_sellers['image'] ?>">
+                    <div class="detail">
+                        <p>Seller Id : <?= $fetch_sellers['seller_id'];?></p>
+                        <p>Seller Name : <?= $fetch_sellers['name'];?></p>
+                        <p>Seller Email : <?= $fetch_sellers['email'];?></p>
+                    </div>
                   </div>
                   <?php
                    }
@@ -99,7 +84,7 @@
                          echo'
 
                         <div class="empty">
-                             <p>no unread message yet!</p>
+                             <p>no seller account yet!</p>
                          </div>
 
                          ';
