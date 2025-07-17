@@ -60,14 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function startAutoSlide() {
-            slideInterval = setInterval(nextSlide, 4000); // Change every 4 seconds
+            slideInterval = setInterval(nextSlide, 4000); 
         }
 
         function stopAutoSlide() {
             clearInterval(slideInterval);
         }
 
-        // Manual controls
         nextBtn.addEventListener('click', () => {
             stopAutoSlide();
             nextSlide();
