@@ -213,6 +213,7 @@ video:hover {
     max-width: 90%;
   }
 }
+.order_banner{
   padding: 200px 20px 100px; /* top | sides | bottom */
   position: relative;
   text-align: center;
