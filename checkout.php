@@ -35,16 +35,17 @@
         <div class="check">
             <div class="details">
                 <h1>Checkout</h1>
-                <p>
-
+                <p class="checkout-note">
+                    Please review your billing details carefully before placing the order. Your order will be processed securely, and you'll receive a confirmation via email shortly. Thank you for shopping with us!
                 </p>
-                <span><a href="dashboard.php">home</a><i class="bxnx-right-arrow-alt">checkout</i></span>
+                <span><a href="home.php">home</a><i class="bx bxs-right-arrow-alt"><a href="checkout.php">checkout</a></i></span>
             </div>
         </div>
 
         <div class="checkout">
             <div class="heading">
                 <h1>checkout summery</h1>
+                
             </div>
         </div>
         <div class="row">
@@ -74,6 +75,14 @@
                                     <option value="net banking">net banking</option>
                                     <option value="upi or rupay">upi or rupay</option>
                                     <option value="paytm">paytm</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <p>address type <span>*</span></p>
+                                <select name="method" class="box">
+                                    <option value="home">home </option>
+                                    <option value="office">office  </option>
+                                    
                                 </select>
                             </div>
                             <div class="col">

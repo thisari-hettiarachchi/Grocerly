@@ -21,14 +21,17 @@ body {
   position: relative;
 }
 
+
 .check {
   background: linear-gradient(135deg, #d1fae5, #ecfdf5);
   padding: 3rem 1rem;
   text-align: center;
   border-bottom: 1px solid var(--border-color);
-   margin-top: 6rem;
-    padding: 2rem 0;
-    text-align: center;
+  margin-top: 6rem;
+  padding: 2rem 0;
+  text-align: center;
+  background-image: url("../images/checkout.avif") ;
+  background-repeat: no-repeat;
     
 }
 
@@ -196,5 +199,12 @@ button.btn:hover {
   transform: scale(1.05);
 }
 
-
+.checkout-note {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-top: 0.5rem;
+}
 
