@@ -1,53 +1,58 @@
-<?php
+<?php 
     include 'components/connect.php';
 
-    session_start();
+    $user_id = null;
 
-    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
-    ini_set('display_errors', '1');
+    if (isset($_COOKIE['email'])) {
+        $email = $_COOKIE['email'];
 
-// Initialize variables with default values
-$user_id = $_SESSION['user_id'] ?? 0;
-$name = $email = $number = $msg = '';
+        $query = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
+        $query->execute([$email]);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send'])) {
-    // Check if database connection exists
-    if (!isset($conn)) {
-        die("<script>alert('Database connection failed. Please try again later.');</script>");
-    }
-
-    // Sanitize inputs with null checks
-    $name = filter_var($_POST['name'] ?? '', FILTER_SANITIZE_STRING);
-    $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
-    $number = filter_var($_POST['number'] ?? '', FILTER_SANITIZE_STRING);
-    $msg = filter_var($_POST['msg'] ?? '', FILTER_SANITIZE_STRING);
-
-    // Validate required fields
-    if (empty($name) || empty($email) || empty($number) || empty($msg)) {
-        echo "<script>alert('Please fill all required fields!');</script>";
-    } else {
-        try {
-            // Check for duplicate messages
-            $stmt = $conn->prepare("SELECT * FROM message WHERE name = ? AND email = ? AND number = ? AND message = ?");
-            $stmt->execute([$name, $email, $number, $msg]);
-
-            if ($stmt->rowCount() > 0) {
-                echo "<script>alert('You have already sent this message.');</script>";
-            } else {
-                // Insert new message
-                $stmt = $conn->prepare("INSERT INTO message (user_id, name, email, number, message, created_at) VALUES (?, ?, ?, ?, ?, NOW())");
-                $stmt->execute([$user_id, $name, $email, $number, $msg]);
-                echo "<script>alert('Message sent successfully!'); window.location.href='contact_us.php';</script>";
-                exit();
-            }
-        } catch (PDOException $e) {
-            error_log("Database error: " . $e->getMessage());
-            echo "<script>alert('An error occurred. Please try again.');</script>";
+        if ($query->rowCount() > 0) {
+            $fetch_user = $query->fetch(PDO::FETCH_ASSOC);
+            $user_id = $fetch_user['user_id'];
         }
     }
-}
+    
+    if (isset($_POST['send_message'])) {
+        if (!empty($user_id)) {
+            $message_id = uniqid();
+            $name = htmlspecialchars($_POST['name']);
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $subject = htmlspecialchars($_POST['subject']);
+            $message = htmlspecialchars($_POST['message']);
 
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $warning_msg[] = 'Invalid email address';
+            } else {
+                $verify_message = $conn->prepare("SELECT * FROM `message` WHERE user_id = ? AND subject = ?");
+                $verify_message->execute([$user_id, $subject]);
+
+                if ($verify_message->rowCount() > 0) {
+                    $warning_msg[] = 'Message with this subject already exists';
+                } else {
+                    $insert_message = $conn->prepare("INSERT INTO `message` (message_id, user_id, name, email, subject, message) VALUES(?, ?, ?, ?, ?, ?)");
+                    try {  
+                        $insert_message->execute([$message_id, $user_id, $name, $email, $subject, $message]);
+
+                        if ($insert_message->rowCount() > 0) {
+                            $success_msg[] = "Message Sent Successfully";
+                        } else {
+                            $warning_msg[] = "Failed to Send Message"; 
+                        }
+                    } catch (PDOException $e) {
+                        $warning_msg[] = "Database Error: " . $e->getMessage(); 
+                    }
+                }
+            }
+        } else {
+            $warning_msg[] = 'Please Login First';
+        }
+    }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send'])) {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Contac Us Page</title>
+        <title>Contact Us Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
         <link rel="stylesheet" type="text/css" href="css/contact.css">
@@ -132,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send'])) {
 
       <input type="text" name="number" style="display:none" tabindex="-1" autocomplete="off">
 
-      <button type="submit" name="send">Send Message</button>
+      <button type="submit" name="send_message">Send Message</button>
     </form>
   </div>
 
@@ -143,6 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send'])) {
 </section>
 
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <?php include('components/footer.php'); ?>
 <?php include('components/alert.php'); ?>
