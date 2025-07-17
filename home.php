@@ -107,6 +107,78 @@
                 </div>
             </div>
         </section>        
+
+        <section class="deals-section">
+            <h2 class="section-title">Current Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <h3>Fresh Daily Picks</h3>
+                    <p>Fresh vegetables and fruits at amazing prices</p>
+                    <div class="deal-percentage">30% OFF</div>
+                </div>
+                
+                <div class="deal-card">
+                    <h3>Weekly Essentials</h3>
+                    <p>Stock up on pantry and household items</p>
+                    <div class="deal-percentage">25% OFF</div>
+                </div>
+                
+                <div class="deal-card">
+                    <h3>Seasonal Special</h3>
+                    <p>Limited time offers on seasonal products</p>
+                    <div class="deal-percentage">40% OFF</div>
+                </div>
+                
+                <div class="deal-card">
+                    <h3>Buy 1 Get 1</h3>
+                    <p>Double the value on selected items</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="features-section">
+            <h2 class="section-title"> Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Fast Delivery</h3>
+                    <p>Same-day delivery available. Get your groceries in 2 hours or less.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Fresh Guarantee</h3>
+                    <p>100% fresh guarantee on all produce. Not satisfied? Get a full refund.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Secure Payments</h3>
+                    <p>Multiple payment options with bank-level security for all transactions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service to help with any questions or concerns.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="app-section">
+            <h2>Download Our App</h2>
+            <p>Shop on the go with our mobile app. Get exclusive deals and faster checkout!</p>
+            <div class="app-buttons">
+                <a href="#" class="app-button">
+                    Download on Play Store
+                </a>
+                <a href="#" class="app-button">
+                    Download on App Store
+                </a>
+            </div>
+        </section>
         
         <script src="js/user_script.js"></script>
         <?php include('components/alert.php'); ?>
