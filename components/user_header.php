@@ -1,7 +1,7 @@
 <?php 
     include_once 'components/connect.php';
 
-    session_start();
+   
 
     $fetch_profile = null;
 
