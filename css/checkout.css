@@ -1,0 +1,200 @@
+:root {
+  --primary-color: #10b981;
+  --primary-dark: #059669;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-placeholder: #9ca3af;
+  --border-color: #e5e7eb57;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+.check {
+  background: linear-gradient(135deg, #d1fae5, #ecfdf5);
+  padding: 3rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+   margin-top: 6rem;
+    padding: 2rem 0;
+    text-align: center;
+    
+}
+
+.check .details h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 100px;
+  top: 2000px;
+  z-index:-1;
+  color: #10b981;
+  
+}
+
+.check .details p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.check .details span {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.check .details a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.check .details i {
+  color: var(--primary-dark);
+  margin-left: 0.5rem;
+}
+
+/* Checkout Section */
+.checkout {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout .heading {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 2rem 3rem;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.checkout .heading h1 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+/* Form Row */
+.row {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+/* Main Row Wrapper */
+.row {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: #f0fdf4;
+}
+
+/* Form Container */
+.form {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.1);
+  width: 100%;
+  max-width: 850px;
+}
+
+/* Section Title */
+.register h3 {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/* Flex Columns */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Each Column */
+.col {
+  flex: 1 1 45%;
+}
+
+/* Input Field Group */
+.input-field {
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.input-field p {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+/* Inputs and Selects */
+.input-field input,
+.input-field select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Hover + Focus Effects */
+.input-field input:hover,
+.input-field select:hover,
+.input-field input:focus,
+.input-field select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Submit Button */
+button.btn {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button Hover */
+button.btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+
+

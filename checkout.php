@@ -1,0 +1,124 @@
+<?php 
+    include 'components/connect.php';
+
+    if (isset($_COOKIE['user_id'])) {
+        $user_id = $_COOKIE['user_id'];
+    } else {
+        $user_id = '';
+    }
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Checkout Page</title>
+
+        <link rel="stylesheet" type="text/css" href="css/user_styles.css">
+
+        <link rel="stylesheet" type="text/css" href="css/checkout.css">
+        
+        <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+        <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <?php include('components/user_header.php'); ?>
+        <div class="check">
+            <div class="details">
+                <h1>Checkout</h1>
+                <p>
+
+                </p>
+                <span><a href="dashboard.php">home</a><i class="bxnx-right-arrow-alt">checkout</i></span>
+            </div>
+        </div>
+
+        <div class="checkout">
+            <div class="heading">
+                <h1>checkout summery</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form">
+                <form action="" method= "post" class="register">
+                    <input type="hidden" name="p_id" value=<?= $get_id; ?>">
+                    <h3>billing details</h3>
+                    <div class="flex">
+                        <div class="col">
+                            <div class="input-field">
+                                <p>your name <span>*</span></p>
+                                <input type="text" name="name" placeholder="enter your name" maxlength="50" required = "box">
+                            </div>
+                            <div class="input-field">
+                                <p>your number <span>*</span></p>
+                                <input type="text" name="number" placeholder="enter your number" class="box" required>
+                            </div>
+                            <div class="input-field">
+                                <p>your email <span>*</span></p>
+                                <input type="text" name="email" placeholder="enter your email" class="box" required>
+                            </div>
+                            <div class="input-field">
+                                <p>payment status <span>*</span></p>
+                                <select name="method" class="box">
+                                    <option value="cash on delivery">cash on delivery</option>
+                                    <option value="credit or debit card">credit or debit card</option>
+                                    <option value="net banking">net banking</option>
+                                    <option value="upi or rupay">upi or rupay</option>
+                                    <option value="paytm">paytm</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <div class="input-field">
+                                    <p>address line 01 <span>*</span></p>
+                                    <input type="text" name="flat" placeholder="e.g flat & building" maxlength="50" required = "box">
+                                </div>
+                                <div class="input-field">
+                                    <p>address line 02 <span>*</span></p>
+                                    <input type="text" name="street" placeholder="e.g street name" maxlength="50" required = "box">
+                                </div>
+                                <div class="input-field">
+                                    <p>city name <span>*</span></p>
+                                    <input type="text" name="city" placeholder=" enter city name" maxlength="50" required = "box">
+                                </div>
+                                <div class="input-field">
+                                    <p>country name <span>*</span></p>
+                                    <input type="text" name="country" placeholder="enter country name" maxlength="50" required = "box">
+                                </div>
+                                <div class="input-field">
+                                    <p>pincode <span>*</span></p>
+                                    <input type="text" name="pin" placeholder="e.g 110099" maxlength="6" required = "box">
+                                </div>
+
+                            </div>
+                            <div class="button-container">
+                                <button type="submit" name="place_order" class="btn">Place Order</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+            
+        
+        <script src="js/user_script.js"></script>
+        <?php include('components/alert.php'); ?>
+        
+
+    </body>
+
+</html>
+
+
+
