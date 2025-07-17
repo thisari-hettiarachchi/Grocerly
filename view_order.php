@@ -1,25 +1,38 @@
 <?php 
     include 'components/connect.php';
+session_start();
 
-    if(isset($_COOKIE['user_id'])){
-        $user_id = $_COOKIE['user_id'];
-    }else{
-        $user_id = '';
+// Use session to verify login (same as order.php)
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+    $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        $user_id = $user['user_id'];
+    } else {
         header('location:login.php');
+        exit;
     }
+} else {
+    header('location:login.php');
+    exit;
+}
 
-    if(isset($_GET['get_id'])){
-        $get_id = $_GET['get_id'];
-    }else{
-        $get_id = '';
-        header('location:order.php');
-    }
+if (isset($_GET['get_id'])) {
+    $get_id = $_GET['get_id'];
+} else {
+    header('location:order.php');
+    exit;
+}
 
-    if(isset($_POST['canceled'])){
-        $update_order = $conn->prepare("UPDATE 'oreders' SET status = ? WHERE id = ?");
-        $update_order->execute(['canceled' , $get_id]);
-        header('location:order.php');
-    }
+if (isset($_POST['canceled'])) {
+    $update_order = $conn->prepare("UPDATE `orders` SET status = ? WHERE order_id = ?");
+    $update_order->execute(['canceled', $get_id]);
+    header('location:order.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,21 +71,19 @@
 
     <div class="line2"></div>
     <div class="heading">
-            <h1>Order Details</h1>
-            <img src="img/separator.png">
-        </div>
+    </div>
     <div class="view_order">
         
         <div class="box-container">
         <?php 
             $grand_total= 0;
 
-            $select_order = $conn->prepare("SELECT * FROM 'orders' WHERE id = ? LIMIT 1");
+            $select_order = $conn->prepare("SELECT * FROM `orders` WHERE order_id = ? LIMIT 1");
             $select_order->execute([$get_id]);
 
             if ($select_order->rowCount() > 0){
-                while($fetch_oeder = $select_order->fetch(PDO::FETCH_ASSOC)){
-                    $select_product = $conn->prepare("SELECT * FROM products WHERE id = ?");
+                while($fetch_order = $select_order->fetch(PDO::FETCH_ASSOC)){
+                    $select_product = $conn->prepare("SELECT * FROM `product` WHERE product_id = ?");
                     $select_product->execute([$fetch_order['product_id']]);
 
                     if($select_product->rowCount() > 0){
@@ -84,19 +95,10 @@
         <div class="box">
             <div class="col">
                 <div class="product_slider">
-                    <div>
-                        <img src="fruits" class="order_container" src="uploaded_files/<?= $fetch_product['mango']?>">
-
-                    </div>
-                    <div class="slider_thumblines">
-                        <a href="uploaded_files/<?= $fetch_product['mango'];?>" class="slider_thumbline_active">
-                            <img src="uploaded_files/<?= $fetch_product['mango']; ?>" >
-                        </a>
-
-                    </div>
+                    <img src="uploaded_files/<?= $fetch_product['image'] ?>" class="img1" alt="Product Image">
                 </div>
                 <p class="date">
-                <i class="bx bxs-calender"></i><span><?= $fetch_order['date']; ?></span></p>
+                <i class="bx bxs-calender"></i><span><?= $fetch_order['dates']; ?></span></p>
                 
                 <div class="details">
                     <p class="price">$<?= $fetch_product['price']; ?> x <?= $fetch_order['qty'];?></p>
@@ -116,7 +118,7 @@
             <p class="status" style="color:<?php if($fetch_order['status']=='delivered'){echo "green";}elseif($fetch_order['status']=='canceled'){echo "red";}else{echo "orange";}?>"><?= $fetch_order['status']; ?></p>
             
             <?php if($fetch_order['status'] == 'canceled'): ?>
-                <a href="checkout.php?get_id=<?= $fetch_product['id'] ?>" class="btn">order again</a>
+                <a href="checkout.php?get_id=<?= $fetch_product['product_id'] ?>" class="btn">order again</a>
             <?php else: ?>
                 <form action="" method="post">
                     <button type="submit" name="canceled" class="btn" onclick="return confirm('Do you want to canceled this order?');">canceled</button>

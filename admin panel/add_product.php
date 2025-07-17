@@ -55,13 +55,13 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
         $image = '';
     }
 
-    $stmt = $conn->prepare("INSERT INTO product
-    (seller_id, name, price, stock, image, status, category, description, brand, sizes)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->execute([
-        $seller_id, $name, $price, $stock, $image,
-        $status, $category, $description, $brand, $sizes
-    ]);
+   $stmt = $conn->prepare("INSERT INTO product
+(seller_id, name, price, stock, image, status, category, description)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->execute([
+    $seller_id, $name, $price, $stock, $image,
+    $status, $category, $description
+]);
 
     $success = true;
 }
