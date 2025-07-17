@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <?php include '../components/alert.php'; ?>
 
-        <script src="../js/admin_script.js"></script>
+        <script src="../js/admin.js"></script>
     </body>
 
 </html>
