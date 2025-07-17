@@ -18,7 +18,7 @@
 
     
     // Handle subscription
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['subscribe'])) {
         $email = $_POST['email'];
 
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -77,7 +77,7 @@
                 <form method="POST" action="">
                     <div class="input-field">
                         <input type="email" name="email" placeholder="Enter your E-mail" required>
-                        <button class="btn" type="submit"><i class='bx bxs-bell bx-tada' ></i> Subscribe</button>
+                        <button class="btn" type="submit" name="subscribe"><i class='bx bxs-bell bx-tada' ></i> Subscribe</button>
                     </div>
                 </form>
             <?php } ?>
