@@ -45,6 +45,7 @@ if (isset($_POST['canceled'])) {
         <title>Order Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
+        <link rel="stylesheet" type="text/css" href="css/order.css">
 
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
