@@ -41,6 +41,7 @@ if (isset($_POST['update'])) {
     if (!empty($new_email) && $new_email != $seller_email) {
         $check_email = $conn->prepare("SELECT * FROM sellers WHERE email = ? AND seller_id != ?");
         $check_email->execute([$new_email, $seller_id]);
+        $_SESSION['email'] = $new_email;
         if ($check_email->rowCount() > 0) {
             $warning_msg[] = 'Email already exists';
         } else {

@@ -21,6 +21,9 @@
                 $stmt = $conn->prepare("INSERT INTO users (user_id, name, email, password) VALUES (?, ?, ?, ?)");
                 $stmt->execute([$user_id, $name, $email, $pass]);
                 $success_msg[] = "Successfully registered! Please login.";
+
+                header("Location: login.php");
+                exit;
             }
         }
     }

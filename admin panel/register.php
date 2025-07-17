@@ -21,6 +21,9 @@
                 $stmt = $conn->prepare("INSERT INTO sellers (seller_id, name, email, password) VALUES (?, ?, ?, ?)");
                 $stmt->execute([$seller_id, $name, $email, $pass]);
                 $success_msg[] = "Successfully registered! Please login.";
+
+                header("Location: login.php");
+                exit;
             }
         }
     }
