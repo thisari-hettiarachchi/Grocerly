@@ -13,6 +13,14 @@
         exit;
     }
 
+    $select_orders = $conn->prepare("SELECT * FROM 'orders' WHERE user_id = ?");
+    $select_orders->execute([$user_id]);
+    $total_orders = $select_orders->rowCount();
+
+    $select_orders = $conn->prepare("SELECT * FROM 'message' WHERE user_id = ?");
+    $select_orders->execute([$user_id]);
+    $total_orders = $select_message->rowCount();
+
     $fetch_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
     $fetch_user->execute([$seller_email]);
 
@@ -64,6 +72,25 @@
                     </div>
                     <h3 class="name"><?= htmlspecialchars($fetch_profile['name']); ?></h3>
                     <a href="update.php" class="btn"><i class='bx bx-pencil'></i> Update Profile</a>
+                </div>
+                <div class="box-container">
+
+                    <div class="box">
+                        <div class="flex">
+                            <i class="bx bxs-menu"></i>
+                            <h3><?$total_orders; ?></h3>
+                            <a href="order.php" class="btn">view orders</a>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="flex">
+                            <i class="bx bxs-chat"></i>
+                            <h3><?$total_message; ?></h3>
+                            <a href="contact.php" class="btn">send message</a>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="more-info">
                     <div class="title">

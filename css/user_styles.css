@@ -1582,143 +1582,216 @@ footer .bottom a:hover {
     padding: 50px 0;
 }
 
-/* ---checkout Page--- */
-.checkout {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.checkout-container {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.checkout-form,
-.checkout-summary {
-    flex: 1;
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-}
-
-.checkout-form input,
-.checkout-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.alert {
-    padding: 10px;
-    margin: 10px auto;
-    width: 80%;
+/* ---view order Page--- */
+/* Order Banner */
+.order_banner {
+    background: linear-gradient(to right, #f5f5f5, #e0f7fa);
+    padding: 40px 20px;
     text-align: center;
-    border-radius: 4px;
+}
+.order_banner .header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.order_banner .header p.subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+.order_banner .header span {
+    font-size: 0.9rem;
+    color: #888;
+}
+.order_banner .header span i {
+    vertical-align: middle;
+    margin: 0 5px;
 }
 
-.alert.success { background: #d4edda; color: #155724; }
-.alert.warning { background: #fff3cd; color: #856404; }
-
-.btn {
-    background: #27ae60;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 4px;
-    cursor: pointer;
+/* Horizontal Line */
+.line2 {
+    height: 2px;
+    background-color: #ddd;
+    margin: 20px 0;
 }
 
-
-/* ---view page Page--- */
-.view-container {
+/* View Order Section */
+.view_order {
+    padding: 30px 20px;
+}
+.view_order .heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.view_order .heading h1 {
+    font-size: 2rem;
+    color: #444;
+}
+.view_order .heading img {
+    width: 150px;
+    margin-top: 10px;
+}
+.view_order .box-container {
     display: flex;
-    padding: 40px;
+    flex-wrap: wrap;
     gap: 30px;
-    background-color: #fff;
-    max-width: 1200px;
-    margin: auto;
+    justify-content: center;
+}
+.view_order .box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+}
+.view_order .box .col {
+    flex: 1;
+    padding: 20px;
+    min-width: 300px;
 }
 
-.view-image {
-    flex: 1;
+/* Product Image Slider */
+.product_slider {
+    position: relative;
+    text-align: center;
+}
+.product_slider img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.slider_thumblines {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.slider_thumblines a img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+}
+.slider_thumblines .slider_thumbline_active img {
+    border-color: #2196f3;
+}
+
+/* Details Section */
+.details {
+    margin-top: 15px;
+}
+.details .price, .details .name {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.details .grad_total span {
+    font-weight: bold;
+    color: #e91e63;
+}
+
+/* Billing Info */
+.title {
+    font-weight: 600;
+    margin: 20px 0 10px;
+    color: #555;
+}
+.user {
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 0.95rem;
+}
+.status {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+.btn:hover {
+    background-color: #e64a3f;
+}
+
+/* Empty message */
+.empty {
+    text-align: center;
+    color: #999;
+    font-size: 1.1rem;
+    padding: 40px;
+}
+/*profile page*/
+/* Box Container Styling */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 20px;
+    justify-content: center;
+}
+
+/* Individual Box Styling */
+.box {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    width: 280px;
+    transition: transform 0.3s ease;
+}
+.box:hover {
+    transform: translateY(-5px);
+}
+
+/* Flex layout inside the box */
+.box .flex {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+    text-align: center;
 }
 
-.view-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
+/* Icon Styling */
+.box i {
+    font-size: 3rem;
+    color: #2196f3;
 }
 
-.thumbnails {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.thumbnails img {
-    width: 70px;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-.thumbnails img:hover {
-    border: 2px solid #333;
-}
-
-.view-details {
-    flex: 1;
-}
-
-.view-details h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
+/* Count Text Styling */
+.box h3 {
+    font-size: 2rem;
+    font-weight: 600;
     color: #333;
 }
 
-.view-details .price {
-    font-size: 20px;
-    color: #27ae60;
-    margin-bottom: 10px;
-}
-
-.view-details .desc {
-    margin-bottom: 15px;
-}
-
-.view-details .stock {
-    margin: 10px 0;
-    color: #888;
-}
-
-.qty {
-    width: 60px;
-    padding: 5px;
-    margin-right: 10px;
-}
-
-.btn {
-    padding: 10px 20px;
-    background: #27ae60;
+/* Button Styling */
+.box .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
     color: #fff;
-    border: none;
+    background-color: #2196f3;
     border-radius: 6px;
-    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
-
-.btn:hover {
-    background: #219150;
+.box .btn:hover {
+    background-color: #1976d2;
 }
 
 
