@@ -74,6 +74,7 @@
     <body>
 
         <?php include('components/user_header.php'); ?>
+        
 
 
         <div class="cart">
