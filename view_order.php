@@ -95,10 +95,28 @@
                 <div class="details">
                     <p class="price">$<?= $fetch_product['price']; ?> x <?= $fetch_order['qty'];?></p>
                     <p class="name"><?= $fetch_product['name'];?></p>
-                    <p class="grad_total">total amount payable : <span>$<?= $grand_total?></span></p>
+                    <p class="grad_total">total amount payable : <span>$<?= $grand_total?>/-</span></p>
 
                 </div>
             </div>
+        </div>
+        <div class="col">
+            <p class="title">billing address</p>
+            <p class="user"><i class="bx bxs-user-rectangle"></i><?= $fetch_order['name']; ?></p>
+            <p class="user"><i class="bx bxs-phone-outgoing"></i><?= $fetch_order['number']; ?></p>
+            <p class="user"><i class="bx bxs-envelope"></i><?= $fetch_order['email']; ?></p>
+            <p class="user"><i class="bx bxs-map-alt"></i><?= $fetch_order['address']; ?></p>
+            <p class="title">status</p>
+            <p class="status" style="color:<?php if($fetch_order['status']=='delivered'){echo "green";}elseif($fetch_order['status']=='canceled'){echo "red";}else{echo "orange";}?>"><?= $fetch_order['status']; ?></p>
+            
+            <?php if($fetch_order['status'] == 'canceled'): ?>
+                <a href="checkout.php?get_id=<?= $fetch_product['id'] ?>" class="btn">order again</a>
+            <?php else: ?>
+                <form action="" method="post">
+                    <button type="submit" name="canceled" class="btn" onclick="return confirm('Do you want to cancel this order?');">cancel</button>
+                </form>
+            <?php ?>
+                    
         </div>
         <?php
 
@@ -116,7 +134,7 @@
     </div>
 
 </div>
-/*39.01*/
+
 
 
 
