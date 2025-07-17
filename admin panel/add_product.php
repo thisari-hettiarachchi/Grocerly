@@ -25,14 +25,14 @@
         exit();
     }
     //save as in database
-$success_message = '';
+$success_msg[] = '';
 
 if (isset($_POST['publish'])) {
     $status = 'active';
-    $success_message = 'Product published successfully!';
+    $success_msg[] = 'Product published successfully!';
 } elseif (isset($_POST['draft'])) {
     $status = 'deactive';
-    $success_message = 'Product saved as draft!';
+    $success_msg[] = 'Product saved as draft!';
 }
 
 if (isset($_POST['publish']) || isset($_POST['draft'])) {

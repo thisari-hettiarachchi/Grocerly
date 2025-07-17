@@ -10,6 +10,7 @@
         <title>Home Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
+        <link rel="stylesheet" type="text/css" href="css/shop.css">
         
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
@@ -106,7 +107,67 @@
                     </a>
                 </div>
             </div>
-        </section>        
+        </section>      
+        
+        <div class="shop-container">
+            <div class="heading">
+                <h1>Our Latest Products</h1>
+            </div>
+            <div class="box-container">
+                <?php
+                    $select_products = $conn->prepare("SELECT * FROM product WHERE status = ?");
+                    $select_products->execute(['active']);
+
+                    if ($select_products->rowCount() > 0) {
+                        while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
+                ?>
+
+                <form action="" method="post" class="box <?php if($fetch_products['stock'] == 0){echo "disabled";}?>">
+                    <img src="uploaded_files/<?= $fetch_products['image']; ?>" class="image">
+                    <?php  
+                        if ($fetch_products['stock'] > 9) { ?>
+                            <span class="stock" style="color: green;">In Stock</span>
+                        <?php } elseif ($fetch_products['stock'] == 0) { ?>
+                            <span class="stock" style="color: red;">Out Of Stock</span>
+                        <?php } else { ?>
+                            <span class="stock" style="color: red;">Only Few Left</span>
+                        <?php } ?>
+
+                    <div class="content">
+                        <h3 class="name"><?= $fetch_products['name']; ?></h3>
+                        <div class="button">
+                            <div>
+                                <?php if ($fetch_products['stock'] > 0) { ?>
+                                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+                                <?php } ?>
+                                <a href="view_page.php?product_id=<?= $fetch_products['product_id'] ?>" class="bx bxs-show"></a>
+                            </div>
+                        </div>
+                        <h3 class="price">Rs.<?=$fetch_products['price']; ?></h3>
+                        <input type="hidden" name="product_id" value="<?= $fetch_products['product_id'] ?>">
+                        <div class="flex-btn">
+                            <?php if ($fetch_products['stock'] > 0) { ?>
+                                <a href="checkout.php?get_id=<?= $fetch_products['product_id']?>" class="btn">Buy Now</a>
+                                <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty btn">
+                            <?php } else { ?>
+                                <span class="btn disabled">Out of Stock</span>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </form>
+
+                <?php
+                        }
+                    }else{
+                        echo '
+                        <div class="empty">
+                            <p>No products added yet!</p>
+                        </div>';
+                    }
+                ?>
+            </div>
+        </div>
 
         <section class="deals-section">
             <h2 class="section-title">Current Deals</h2>

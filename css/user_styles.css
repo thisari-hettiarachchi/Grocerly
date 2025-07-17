@@ -644,11 +644,10 @@ header .profile-detail .flex-btn .btn:hover {
 }
 
 .categories h1 {
-  position: relative;
-  display: inline-block;
+  text-align: center;
   font-size: 2rem;
-  margin-bottom: 1rem;
   color: var(--text-primary);
+  margin-bottom: 2rem;
 }
 
 .categories h1::after {

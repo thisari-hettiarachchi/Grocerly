@@ -79,17 +79,19 @@ if (isset($_SESSION['email'])) {
         </a>
 
         <div class="content">
-            <p class="date"><i class="bx bxs-calendar"></i> <span><?= $fetch_orders['dates']; ?></span></p>
+            <p class="date"><i class="bx bxs-calendar"></i> <span><?= htmlspecialchars($fetch_orders['dates']); ?></span></p>
             <div class="row">
-                <h3 class="name"><?= $fetch_products['name']; ?></h3>
-                <p class="price">$<?= $fetch_products['price']; ?>/-</p>
+                <h3 class="name"><?= htmlspecialchars($fetch_products['name']); ?></h3>
                 <?php
-                $status = $fetch_orders['status'];
-                $color = ($status === 'delivered') ? 'green' : (($status === 'canceled') ? 'red' : 'orange');
+                    $total_price = $fetch_orders['price'] * $fetch_orders['qty'];
+                    $status = $fetch_orders['status'];
+                    $color = ($status === 'delivered') ? 'green' : (($status === 'canceled') ? 'red' : 'orange');
                 ?>
-                <p class="status" style="color: <?= $color ?>;"><?= $status ?></p>
+                <p><strong>Total: $<?= number_format($total_price, 2); ?>/-</strong></p>
+                <p class="status" style="color: <?= $color ?>;"><?= htmlspecialchars($status); ?></p>
             </div>
         </div>
+
     </div>
     <?php
                 }

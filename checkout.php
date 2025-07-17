@@ -67,6 +67,7 @@ if(isset($_POST['place_order']) && $user_id != ''){
         $delete_cart_id = $conn->prepare("DELETE FROM cart WHERE user_id = ?");
         $delete_cart_id->execute([$user_id]);
 
+        $success_msg[] = 'Order placed successfully!';  
         header('location:order.php');
         exit;
     } else {
