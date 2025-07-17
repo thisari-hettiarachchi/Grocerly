@@ -117,7 +117,7 @@
                 </form>
             </div>
             <div class="summery">
-                <h3>my bag</h3>
+                
                 <div class="box-container">
                     <?php
                         $grand_total=0;
@@ -146,8 +146,8 @@
 
                             if($select_cart->rowCount() > 0){
                                 while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
-                                    $select_get = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
-                                    $select_get->execute([$fetch_cart['product_id']]);
+                                    $select_get = $conn->prepare("SELECT * FROM `products` WHERE product_id = ?");
+                                    $select_get->execute([$fetch_cart[`product_id`]]);
                                     $fetch_products = $select_get->fetch(PDO::FETCH_ASSOC);
 
                                 $sub_total = ($fetch_cart['qty'] * $fetch_products['price']);
