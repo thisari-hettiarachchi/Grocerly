@@ -1,29 +1,30 @@
 <?php
-    include '../components/connect.php';
+include '../components/connect.php';
 
-    session_start();
+session_start();
 
-    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
-    ini_set('display_errors', '1');
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+ini_set('display_errors', '1');
 
-    if (isset($_SESSION['email'])) {
-        $email = $_SESSION['email'];
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
 
-        $stmt = $conn->prepare("SELECT seller_id, name FROM sellers WHERE email = ?");
-        $stmt->execute([$email]);
-        $seller = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare("SELECT seller_id, name FROM sellers WHERE email = ?");
+    $stmt->execute([$email]);
+    $seller = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($seller) {
-            $seller_id = $seller['seller_id'];
-            $seller_name = $seller['name'];
-        } else {
-            $seller_id = null;
-            $seller_name = null;
-        }
+    if ($seller) {
+        $seller_id = $seller['seller_id'];
+        $seller_name = $seller['name'];
     } else {
-        header("Location: login.php");
-        exit();
+        $seller_id = null;
+        $seller_name = null;
     }
+} else {
+    header("Location: login.php");
+    exit();
+}
+
     //delete product from database 
 
    if (isset($_POST['delete'])) {
@@ -121,7 +122,8 @@
           </section>
         </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script src="../js/admin.js"></script>
 
