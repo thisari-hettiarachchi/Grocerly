@@ -51,7 +51,7 @@
         <div class="row">
             <div class="form">
                 <form action="" method= "post" class="register">
-                    <input type="hidden" name="p_id" value=<?= $get_id; ?>">
+                    <input type="hidden" name="p_id" value="<?= $get_id; ?>">
                     <h3>billing details</h3>
                     <div class="flex">
                         <div class="col">
@@ -116,8 +116,74 @@
                     </div>
                 </form>
             </div>
-        </div>
+            <div class="summery">
+                <h3>my bag</h3>
+                <div class="box-container">
+                    <?php
+                        $grand_total=0;
+                        if(isset($_GET['get_id'])){
+                            $select_get = $conn->prepare("SELECT * FROM `products` WHERE id= 
+                            ?");
+                            $select_get->execute([$_GET['get_id']]);
 
+                            while($fetch_get = $select_get->fetch(PDO::FETCH_ASSOC)){
+                                $sub_total = $fetch_get['price'];
+                                $grand_total+= $sub_total;
+                    ?>
+                    <div class="flex">
+                        <img src="uploaded_files/<?= $fetch_get['mango'];?>" class="image
+                        ">
+                        <div>
+                            <h3 class="name"><?= $fetch_get['name'];?></h3>
+                            <p class="price"><?= $fetch_get['price'];?>/-</p>
+                        </div>
+                    </div>
+                    <?php
+                            }
+                        }else{
+                            $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+                            $select_cart->execute([$user_id]);
+
+                            if($select_cart->rowCount() > 0){
+                                while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
+                                    $select_get = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+                                    $select_get->execute([$fetch_cart['product_id']]);
+                                    $fetch_products = $select_get->fetch(PDO::FETCH_ASSOC);
+
+                                $sub_total = ($fetch_cart['qty'] * $fetch_products['price']);
+                                $grand_total += $sub_total;
+                        ?>
+                        <div class="flex">
+                            <img src="uploaded_files/<?= $fetch_products['mango'] ;?>" class="image
+                            ">
+                            <div>
+                                <h3 class="name"><?= $fetch_products['name'];?></h3>
+                                <p class="price"><?= $fetch_products['price'];?> x  <?= $fetch_cart['qty'];?></p>
+                                </p>
+                            </div>
+                        </div>
+                        <?php
+
+                            }
+                            
+                        }else{
+                                echo'
+                                    <div class="empty">
+                                        <p>no products added yet!</p>
+                                    </div>
+            
+                                ';
+                            }
+                        }
+          
+                    ?>
+                </div>
+                <div class="grant-total">
+                    <span>total amount payable:</span>$<?$grand_total;?>/-
+                </div>
+            </div>
+        </div>
+</div>
 
             
         
