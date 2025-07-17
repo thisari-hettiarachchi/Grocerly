@@ -115,10 +115,11 @@
                 <form action="" method="post">
                     <button type="submit" name="canceled" class="btn" onclick="return confirm('Do you want to cancel this order?');">cancel</button>
                 </form>
-            <?php ?>
+            <?php endif;?>
                     
         </div>
         <?php
+                        
 
                         }
                     }

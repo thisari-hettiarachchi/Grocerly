@@ -148,3 +148,8 @@ document.getElementById("scrollTopBtn").addEventListener("click", () => {
     behavior: 'smooth'
   });
 });
+
+function changeImage(element) {
+    const mainImage = document.getElementById("mainImage");
+    mainImage.src = element.src;
+}
