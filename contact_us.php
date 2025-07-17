@@ -1,6 +1,8 @@
 <?php 
     include 'components/connect.php';
 
+    session_start();
+
     $user_id = null;
 
     if (isset($_COOKIE['email'])) {
