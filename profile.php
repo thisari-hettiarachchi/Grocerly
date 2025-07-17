@@ -45,7 +45,6 @@
         <title>User Profile Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
-
         <link rel="stylesheet" type="text/css" href="css/profile.css">
 
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">

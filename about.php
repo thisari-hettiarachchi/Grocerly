@@ -17,8 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About | Grocerly</title>
     
-    <!-- Favicon -->
     <link rel="stylesheet" type="text/css" href="css/user_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
         
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
