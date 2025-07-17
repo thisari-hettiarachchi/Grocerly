@@ -45,7 +45,9 @@
         <title>User Profile Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
-        
+
+        <link rel="stylesheet" type="text/css" href="css/profile.css">
+
         <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -77,17 +79,17 @@
 
                     <div class="box">
                         <div class="flex">
-                            <i class="bx bxs-menu"></i>
-                            <h3><?$total_orders; ?></h3>
+                            
+                            <h3><i class="bx bxs-menu"></i><?$total_orders; ?></h3>
                             <a href="order.php" class="btn">view orders</a>
                         </div>
                     </div>
                     
                     <div class="box">
                         <div class="flex">
-                            <i class="bx bxs-chat"></i>
-                            <h3><?$total_message; ?></h3>
-                            <a href="contact.php" class="btn">send message</a>
+                            
+                            <h3><i class="bx bxs-chat"></i><?$total_message; ?></h3>
+                            <a href="contact_us.php" class="btn">send message</a>
                         </div>
                     </div>
 
