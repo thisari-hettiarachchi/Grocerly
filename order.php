@@ -1,21 +1,34 @@
 <?php 
 include 'components/connect.php';
+if(isset($_COOKIE['user_id'])){
+    $user_id = $_COOKIE['user_id'];
+}else{
+    $user_id = '';
+    header('location:login.php');
+}
 
-$user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Order Page</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Order Page</title>
 
         <link rel="stylesheet" type="text/css" href="css/user_styles.css">
-    <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
-</head>
+
+        <link rel="shortcut icon" href="images/fav.png" type="image/svg+xml">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+        <link href="https://unpkg.com/boxicons@2.1/css/boxicons.min.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+    </head>
 
 <body>
     
@@ -46,26 +59,30 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
             <a href="view_order.php?get_id=<?= $fetch_orders['id']; ?>">
                 <div class="icon">
                     <div class="icon-box">
-                        <img src="uploaded_files/<?= $fetch_products['thumb_one']; ?>" class="img1">
-                        <img src="uploaded_files/<?= $fetch_products['thumb_two']; ?>" class="img2">
+                        <img src="uploaded_files/<?= $fetch_products['mango']; ?>" class="img1">
+                        <img src="uploaded_files/<?= $fetch_products['boiler']; ?>" class="img2">
                     </div>
                 </div>
             </a>
         </div>
         <div class="content">
         <p class="date">
-            <i class="bx bxs-calender"></i><span><?= $fetch_orders['date']; ?>
-
-                </p>
+            <i class="bx bxs-calender"></i><span><?= $fetch_orders['date']; ?></span></p>
             </div>
             <div class="row">
                 <h3 class="name"><?= $fetch_products['name']; ?></h3>
                 <p class="price">$<?= $fetch_products['price']; ?>-/</p>
-                <?php
-                $status = $fetch_orders['status'];
-                $color = ($status === 'delivered') ? 'green' : (($status === 'canceled') ? 'red' : 'orange');
-                ?>
-                <p class="status" style="color: <?= $color ?>;"><?= $status ?></p>
+                <div class="row">
+                <h3 class="name"><?= $fetch_products['name']; ?></h3>
+                <p class="price">$<?= $fetch_products['price']; ?>-/</p>
+
+                    <?php
+                    $status = $fetch_orders['status'];
+                    $color = ($status === 'delivered') ? 'green' : (($status === 'canceled') ? 'red' : 'orange');
+                    ?>
+                    <p class="status" style="color: <?= $color ?>;"><?= $status ?></p>
+                </div>
+
             </div>
         <?php
                     }
@@ -80,6 +97,9 @@ $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : '';
         }
         ?>
     </div>
+
+
+
     <video width="600" controls>
         <source src="your-video.mp4" type="video/mp4">
         Your browser does not support the video tag.

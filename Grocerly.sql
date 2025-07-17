@@ -103,6 +103,7 @@ CREATE TABLE `product` (
   `stock` int(20) NOT NULL,
   `status` varchar(50) NOT NULL,
   `category` varchar(100) NOT NULL
+  'description' varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
