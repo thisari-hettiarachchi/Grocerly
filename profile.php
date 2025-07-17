@@ -13,13 +13,13 @@
         exit;
     }
 
-    $select_orders = $conn->prepare("SELECT * FROM 'orders' WHERE user_id = ?");
+    $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ?");
     $select_orders->execute([$user_id]);
     $total_orders = $select_orders->rowCount();
 
-    $select_orders = $conn->prepare("SELECT * FROM 'message' WHERE user_id = ?");
-    $select_orders->execute([$user_id]);
-    $total_orders = $select_message->rowCount();
+    $select_message = $conn->prepare("SELECT * FROM `message` WHERE user_id = ?");
+    $select_message->execute([$user_id]);
+    $total_message = $select_message->rowCount();
 
     $fetch_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
     $fetch_user->execute([$seller_email]);
