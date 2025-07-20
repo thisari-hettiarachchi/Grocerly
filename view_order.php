@@ -2,7 +2,6 @@
     include 'components/connect.php';
 session_start();
 
-// Use session to verify login (same as order.php)
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");

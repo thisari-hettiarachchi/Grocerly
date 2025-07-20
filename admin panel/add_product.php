@@ -35,6 +35,7 @@ if (isset($_POST['publish'])) {
     $success_msg[] = 'Product saved as draft!';
 }
 
+
 if (isset($_POST['publish']) || isset($_POST['draft'])) {
     $name = htmlspecialchars(trim($_POST['name']));
     $price = htmlspecialchars(trim($_POST['price']));
@@ -63,7 +64,6 @@ $stmt->execute([
     $status, $category, $description
 ]);
 
-    $success = true;
 }
 
 ?>
@@ -130,7 +130,7 @@ $stmt->execute([
                                 <option disabled selected>select product category</option>
                                 <option value="Fruits items">Fruits</option>
                                 <option value="Vegitable items">Vegitables</option>
-                                <option value="Dairy & Beverage items">Dairy & Beverage</option>
+                                <option value="Dairy & Beverage items">Dairy and Beverage</option>
                                 <option value="Snack items">Snacks</option>
                                 <option value="Bakery items">Bakery Items</option>
                                 <option value="Meat & SeaFood items">Meat & SeaFood</option>
@@ -160,8 +160,6 @@ $stmt->execute([
                 </div>
             </section>
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script src="../js/admin.js"></script>
 

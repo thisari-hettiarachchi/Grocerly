@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2025 at 10:10 AM
+-- Generation Time: Jul 18, 2025 at 07:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,14 @@ CREATE TABLE `cart` (
   `qty` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `price`, `qty`) VALUES
+(6, 2, 3, '250', '1'),
+(7, 2, 7, '700', '1');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +58,14 @@ CREATE TABLE `message` (
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`message_id`, `user_id`, `name`, `email`, `subject`, `message`) VALUES
+(687, 2, 'test', 'testuser@gmail.com', 'Order1', 'bad'),
+(6879, 2, 'test', 'testuser@gmail.com', 'Order', 'i want to get more info about my order');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +79,13 @@ CREATE TABLE `newsletter` (
   `subscription_date` datetime DEFAULT current_timestamp(),
   `status` enum('subscribed','unsubscribed') DEFAULT 'subscribed'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `user_id`, `email`, `subscription_date`, `status`) VALUES
+(1, 2, 'testuser@gmail.com', '2025-07-17 09:39:25', 'unsubscribed');
 
 -- --------------------------------------------------------
 
@@ -88,6 +111,14 @@ CREATE TABLE `orders` (
   `payment_status` varchar(50) DEFAULT 'in progress'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `seller_id`, `name`, `number`, `email`, `address`, `address_type`, `method`, `product_id`, `price`, `qty`, `dates`, `status`, `payment_status`) VALUES
+(5, 2, 1, 'test', '000', 'testuser@gmail.com', '111, kad, mal, sl, 44', 'home', 'cash on delivery', 3, '250', '1', '2025-07-18', 'canceled', 'unpaid'),
+(6, 3, 1, 'thisari', '1213', 'test1@gamil.com', 'hvb, ffg, gygh, cfgg, 1223', 'home', 'cash on delivery', 11, '89', '1', '2025-07-18', 'delivered', 'pending');
+
 -- --------------------------------------------------------
 
 --
@@ -102,9 +133,25 @@ CREATE TABLE `product` (
   `image` varchar(255) NOT NULL,
   `stock` int(20) NOT NULL,
   `status` varchar(50) NOT NULL,
-  `category` varchar(100) NOT NULL
-  'description' varchar(300) NOT NULL
+  `category` varchar(100) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `brand` varchar(100) DEFAULT NULL,
+  `sizes` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `seller_id`, `name`, `price`, `image`, `stock`, `status`, `category`, `description`, `brand`, `sizes`) VALUES
+(3, 1, 'Strawberry', '255', 'strawberry.jpg', 6, 'active', 'Fruits items', 'Fresh strawberries', '', ''),
+(7, 1, 'Tomato', '700', 'tomato.jpg', 70, 'active', 'Vegitable items', 'tomato', '', ''),
+(9, 1, 'Oreo', '120', 'snack4.jpg', 120, 'active', 'Snack items', 'Oreo biscuit', NULL, NULL),
+(10, 1, 'Grapes', '111', 'watermelon.jpg', 30, 'deactive', 'Fruits items', 'fruits', '', ''),
+(11, 1, 'Orange', '89', 'orange.jpg', 400, 'active', 'Fruits items', 'fruits', NULL, NULL),
+(12, 1, 'Lays', '10', 'snack1.jpg', 33, 'active', 'Snack items', 'lays', '', ''),
+(13, 1, 'Cucumber', '11', 'cucumber.jpg', 4, 'active', 'Vegitable items', 'vegi', NULL, NULL),
+(14, 1, 'Cucumber', '11', 'cucumber.jpg', 4, 'active', 'Vegitable items', 'vegi', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -116,15 +163,16 @@ CREATE TABLE `sellers` (
   `seller_id` int(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sellers`
 --
 
-INSERT INTO `sellers` (`seller_id`, `name`, `email`, `password`) VALUES
-(1, 'test', 'testadmin@gmail.com', 'admin');
+INSERT INTO `sellers` (`seller_id`, `name`, `email`, `password`, `image`) VALUES
+(1, 'test', 'testadmin@gmail.com', 'admin', 'user.jpeg');
 
 -- --------------------------------------------------------
 
@@ -145,7 +193,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `image`) VALUES
-(2, 'test', 'testuser@gmail.com', 'test', 'testimonial1.jpg');
+(2, 'test', 'testuser@gmail.com', 'test', 'testimonial1.jpg'),
+(3, 'test1', 'test1@gmail.com', '123', 'user1.jpeg');
 
 -- --------------------------------------------------------
 
@@ -232,31 +281,31 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `message_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `sellers`
@@ -268,13 +317,13 @@ ALTER TABLE `sellers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

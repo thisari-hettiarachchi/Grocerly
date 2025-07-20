@@ -128,7 +128,7 @@ if (isset($_POST['update']) || isset($_POST['draft'])) {
                                       <option selected value="<?= $fetch_product['category'];?>"><?= $fetch_product['category'];?></option>
                                       <option value="Fruits items">Fruits</option>
                                       <option value="Vegitable items">Vegitables</option>
-                                      <option value="Dairy & Beverage items">Dairy & Beverage</option>
+                                      <option value="Dairy & Beverage items">Dairy and Beverage</option>
                                       <option value="Snack items">Snacks</option>
                                       <option value="Bakery items">Bakery Items</option>
                                       <option value="Meat & SeaFood items">Meat & SeaFood</option>
