@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+/*
     document.addEventListener("DOMContentLoaded", function () {
         const sliderBoxes = document.querySelectorAll('.sliderBox');
         const prevBtn = document.querySelector('.slider-prev');
@@ -79,10 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
             startAutoSlide();
         });
 
-        // Start slider
         showSlide(currentSlide);
         startAutoSlide();
     });
+
+*/
+
 
 
 //about page java script part//

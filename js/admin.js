@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Toggle password visibility
     window.togglePassword = function (inputId, button) {
       const passwordInput = document.getElementById(inputId);
       const icon = button.querySelector('i');

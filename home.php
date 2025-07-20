@@ -1,4 +1,109 @@
+<?php
+    include 'components/connect.php';
 
+    session_start();
+
+    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+    ini_set('display_errors', '1');
+
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email']; 
+        $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $user_id = $user ? $user['user_id'] : '';
+    } else {
+        $user_id = '';
+    }
+
+    if (!function_exists('unique_id')) {
+        function unique_id() {
+            return uniqid();
+        }
+    }
+
+    if (isset($_POST['add_to_cart'])) {
+        if (!empty($user_id)) { 
+            $id = unique_id(); 
+            $product_id = $_POST['product_id'];
+            $product_id = filter_var($product_id, FILTER_SANITIZE_STRING);
+
+            $qty = $_POST['qty'];
+            $qty = filter_var($qty, FILTER_SANITIZE_NUMBER_INT); 
+
+            if ($qty <= 0) {
+                $warning_msg[] = 'Invalid quantity!';
+            } else {
+                $verify_cart = $conn->prepare("SELECT * FROM cart WHERE user_id = ? AND product_id = ?");
+                $verify_cart->execute([$user_id, $product_id]);
+
+                $max_cart_items = $conn->prepare("SELECT * FROM cart WHERE user_id = ?");
+                $max_cart_items->execute([$user_id]);
+
+                if ($verify_cart->rowCount() > 0) {
+                    $warning_msg[] = 'Product already exists in your cart';
+                } else if ($max_cart_items->rowCount() >= 20) {
+                    $warning_msg[] = 'Cart is full!';
+                } else {
+                    $select_price = $conn->prepare("SELECT * FROM product WHERE product_id = ? LIMIT 1");
+                    $select_price->execute([$product_id]);
+                    $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+
+                    if ($fetch_price) {
+                        try {
+                            $insert_cart = $conn->prepare("INSERT INTO cart (cart_id, user_id, product_id, price, qty) VALUES (?, ?, ?, ?, ?)");
+                            $insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
+
+                            $success_msg[] = 'Product added to cart successfully';
+                        } catch (PDOException $e) {
+                            $error_msg[] = 'Error adding product to cart: ' . $e->getMessage();
+                        }
+                    } else {
+                        $warning_msg[] = 'Product not found!';
+                    }
+                }
+            }
+        } else {
+            $warning_msg[] = 'Please login to add items to your cart';
+        }
+    }
+
+    if (isset($_POST['add_to_wishlist'])) {
+        if (!empty($user_id)) { 
+            $id = unique_id(); 
+            $product_id = $_POST['product_id'];
+            $product_id = filter_var($product_id, FILTER_SANITIZE_STRING);
+
+            $verify_wishlist = $conn->prepare("SELECT * FROM wishlist WHERE user_id = ? AND product_id = ?");
+            $verify_wishlist->execute([$user_id, $product_id]);
+
+            if ($verify_wishlist->rowCount() > 0) {
+                $warning_msg[] = 'Product already exists in your wishlist';
+            } else {
+                $select_price = $conn->prepare("SELECT price FROM product WHERE product_id = ? LIMIT 1");
+                $select_price->execute([$product_id]);
+                $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+
+                if ($fetch_price) {
+                    try {
+                        $insert_wishlist = $conn->prepare("INSERT INTO wishlist (id, user_id, product_id, price) VALUES (?, ?, ?, ?)");
+                        $insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
+
+                        $success_msg[] = 'Product added to wishlist successfully';
+                    } catch (PDOException $e) {
+                        $error_msg[] = 'Error adding product to wishlist: ' . $e->getMessage();
+                    }
+                } else {
+                    $warning_msg[] = 'Product not found!';
+                }
+            }
+        } else {
+            $warning_msg[] = 'Please login to add items to your wishlist';
+        }
+    } 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,14 +147,15 @@
                     </div>
                 </div>
             </div>
-            <ul class="controls">
+            
+            <!--<ul class="controls">
                 <li class="slider-prev">
                     <i class="bx bxs-left-arrow-alt"></i>
                 </li>
                 <li class="slider-next">
                     <i class="bx bxs-right-arrow-alt"></i>
                 </li>
-            </ul>
+            </ul> -->
         </section>
 
 

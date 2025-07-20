@@ -85,9 +85,9 @@ if (isset($_SESSION['email'])) {
                 <?php
                     $total_price = $fetch_orders['price'] * $fetch_orders['qty'];
                     $status = $fetch_orders['status'];
-                    $color = ($status === 'delivered') ? 'green' : (($status === 'canceled') ? 'red' : 'orange');
+                    $color = ($status === 'delivered') ? 'orange' : (($status === 'canceled') ? 'red' : 'orange');
                 ?>
-                <p><strong>Total: $<?= number_format($total_price, 2); ?>/-</strong></p>
+                <p><strong>Total: Rs.<?= number_format($total_price, 2); ?>/-</strong></p>
                 <p class="status" style="color: <?= $color ?>;"><?= htmlspecialchars($status); ?></p>
             </div>
         </div>
