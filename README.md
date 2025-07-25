@@ -1,16 +1,8 @@
 # 🛒 Grocerly – Grocery Delivery Web Application
 
 🚀 **Group Project Launch: Grocerly**  
+
 Grocerly is a responsive grocery delivery web application developed as a group project. It’s designed to offer a seamless and user-friendly online shopping experience from browsing to checkout.
-
----
-
-## 👥 Team Members
-- Thisari Hettiarachchi  @thisari-hettiarachchi
-- Pramila  @Shanu200
-- Umesh  @umeshwickramaarachchi
-- Malindi  @malindirupraba
-- Chanchala @chanchala0112
 
 ---
 
@@ -32,6 +24,15 @@ Grocerly is a responsive grocery delivery web application developed as a group p
 
 ---
 
+## 👥 Authors
+
+- Thisari Hettiarachchi [@thisari-hettiararchchi](https://github.com/thisari-hettiarachchi)  
+- Pramila Shanuka [@Shanu200](https://github.com/Shanu200)  
+- Umesh Wickramaarachchi [@umeshwickramaarachchi](https://github.com/umeshwickramaarachchi)  
+- Malindi Ruprabha [@malindiruprabha](https://github.com/malindiruprabha)  
+- Chanchala Jeewanthi [@chanchala0112](https://github.com/chanchala0112)
+
+---
 
 ## 📬 Feedback
 We’re proud of what we built together and always open to suggestions and feedback!
