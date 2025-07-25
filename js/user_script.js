@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-/*
     document.addEventListener("DOMContentLoaded", function () {
         const sliderBoxes = document.querySelectorAll('.sliderBox');
         const prevBtn = document.querySelector('.slider-prev');
@@ -83,8 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
         startAutoSlide();
     });
-
-*/
 
 
 

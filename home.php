@@ -148,14 +148,14 @@
                 </div>
             </div>
             
-            <!--<ul class="controls">
+            <ul class="controls">
                 <li class="slider-prev">
                     <i class="bx bxs-left-arrow-alt"></i>
                 </li>
                 <li class="slider-next">
                     <i class="bx bxs-right-arrow-alt"></i>
                 </li>
-            </ul> -->
+            </ul> 
         </section>
 
 
