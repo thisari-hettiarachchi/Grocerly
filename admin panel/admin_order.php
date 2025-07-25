@@ -68,7 +68,7 @@ if (isset($_POST['delete'])) {
     <title>All Orders - Admin</title>
 
     <link rel="stylesheet" type="text/css" href="../css/admin_style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/admin_msg.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin_order.css" />
     <link rel="shortcut icon" href="../images/fav.png" type="image/svg+xml" />
     <link
         rel="stylesheet"

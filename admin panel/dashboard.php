@@ -95,7 +95,7 @@
                         ?>
                         <h3><?= $number_of_active_products; ?></h3>
                         <p>Total Active Products</p>
-                        <a href="view_product.php" class="btn">Active Products</a>
+                        <a href="view_product.php?status=active" class="btn">Active Products</a>
                     </div>
                 </div>
                 <div class="box_container">
@@ -107,7 +107,7 @@
                         ?>
                         <h3><?= $number_of_deactive_products; ?></h3>
                         <p>Total Deactive Products</p>
-                        <a href="view_product.php" class="btn">Deactive Products</a>
+                        <a href="view_product.php?status=deactive" class="btn">Active Products</a>
                     </div>
                     <div class="box">
                         <?php 

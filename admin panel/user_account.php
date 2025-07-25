@@ -38,7 +38,7 @@
         <title>Unread Message</title>
 
         <link rel="stylesheet" type="text/css" href="../css/admin_style.css">
-        <link rel="stylesheet" type="text/css" href="../css/admin_msg.css">
+        <link rel="stylesheet" type="text/css" href="../css/account.css">
         
         <link rel="shortcut icon" href="../images/fav.png" type="image/svg+xml">
 
@@ -61,7 +61,7 @@
                 <div class="heading">
                     <h1>Registered User</h1>
                 </div>
-                <div class="Box_container">
+                <div class="box_container">
                   <?php
                      $select_users = $conn->prepare("SELECT * FROM `users`");
                      $select_users->execute();
@@ -70,7 +70,7 @@
                         while($fetch_users = $select_users->fetch(PDO::FETCH_ASSOC)){
                        
                   ?>
-                  <div class="Box">
+                  <div class="box">
                     <img src="../uploaded_files/<?= $fetch_users['image'] ?>">
                     <div class="detail">
                         <p>User Id : <?= $fetch_users['user_id'];?></p>

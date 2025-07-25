@@ -39,6 +39,16 @@ if (isset($_SESSION['email'])) {
 }
 
 
+$status_filter = isset($_GET['status']) ? $_GET['status'] : 'all';
+
+if ($status_filter == 'active' || $status_filter == 'deactive') {
+    $select_products = $conn->prepare("SELECT * FROM `product` WHERE seller_id = ? AND status = ?");
+    $select_products->execute([$seller_id, $status_filter]);
+} else {
+    $select_products = $conn->prepare("SELECT * FROM `product` WHERE seller_id = ?");
+    $select_products->execute([$seller_id]);
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -1,0 +1,110 @@
+:root {
+  --primary-color: #10b981;
+  --primary-dark: #059669;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-placeholder: #9ca3af;
+  --border-color: #e5e7eb;
+  --white-alfa-25: rgba(255, 255, 255, 0.25);
+  --white-alfa-40: rgba(255, 255, 255, 0.4);
+  --backdrop-filter: blur(20px);
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.order-container {
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.Box_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-left: 15rem;
+}
+
+.Box {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  width: calc(33.333% - 20px);
+  min-width: 300px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.Box:hover {
+  transform: translateY(-5px);
+}
+
+.status,
+.payment_status {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.detail p {
+  margin: 4px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.detail span {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.Box select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+  background: #f9fafb;
+  outline: none;
+}
+
+.Flex-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.Btn {
+  padding: 8px 12px;
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.Btn:hover {
+  background-color: var(--primary-dark);
+}
+
+@media (max-width: 1024px) {
+  .Box {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .Box {
+    width: 100%;
+  }
+
+  .Flex-btn {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
